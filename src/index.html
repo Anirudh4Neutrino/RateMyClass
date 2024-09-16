@@ -1,1 +1,182 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Design Prototype</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+        }
+        .logo {
+            flex: 1;
+        }
+        .nav-bar {
+            display: flex;
+            justify-content: center;
+            flex: 2;
+            gap: 15px;
+        }
+        .nav-bar a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .nav-bar a:hover {
+            background-color: #45a049;
+        }
+        .search-bar {
+            flex: 1;
+            margin: 0 10px;
+            padding: 5px;
+            border: none;
+            border-radius: 4px;
+        }
+        main {
+            display: flex;
+            flex: 1;
+            padding: 20px;
+            gap: 20px;
+        }
+        .filters {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: #f8f8f8;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .filter-button {
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            border-radius: 4px;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .filter-button:hover {
+            background-color: #e0e0e0;
+        }
+        .content {
+            flex: 3;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .classes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .class-item {
+            flex: 1 1 calc(33.333% - 20px);
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .additional-info {
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .additional-info h2 {
+            margin-top: 0;
+        }
+        .sidebar {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: #f8f8f8;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .sidebar a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .sidebar a:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Logo</div>
+        <div class="nav-bar">
+            <a href="#">Home</a>
+            <a href="#">Index</a>
+        </div>
+        <input type="text" class="search-bar" placeholder="Search...">
+    </header>
+    <main>
+        <div class="filters">
+            <div class="filter-button">Filter 1</div>
+            <div class="filter-button">Filter 2</div>
+            <div class="filter-button">Filter 3</div>
+            <!-- Add more filter buttons here -->
+        </div>
+        <div class="content">
+            <div class="classes">
+                <div class="class-item">Class 1</div>
+                <div class="class-item">Class 2</div>
+                <div class="class-item">Class 3</div>
+                <div class="class-item">Class 4</div>
+                <div class="class-item">Class 5</div>
+                <div class="class-item">Class 6</div>
+                <!-- Add more class items here -->
+            </div>
+            <div class="additional-info">
+                <h2>Additional Information</h2>
+                <ul>
+                    <li>Info 1</li>
+                    <li>Info 2</li>
+                    <li>Info 3</li>
+                    <!-- Add more information here -->
+                </ul>
+            </div>
+        </div>
+        <div class="sidebar">
+            <a href="#">Class Catalog</a>
+            <a href="#">Handbook</a>
+            <a href="#">Class Reviews/Ratings</a>
+            <a href="#">Club Catalog</a>
+        </div>
+    </main>
+</body>
+</html>
