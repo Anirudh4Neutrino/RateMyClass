@@ -3,180 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App Design Prototype</title>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-        }
-        .logo {
-            flex: 1;
-        }
-        .nav-bar {
-            display: flex;
-            justify-content: center;
-            flex: 2;
-            gap: 15px;
-        }
-        .nav-bar a {
-            color: white;
-            text-decoration: none;
-            padding: 5px 10px;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-        }
-        .nav-bar a:hover {
-            background-color: #45a049;
-        }
-        .search-bar {
-            flex: 1;
-            margin: 0 10px;
-            padding: 5px;
-            border: none;
-            border-radius: 4px;
-        }
-        main {
-            display: flex;
-            flex: 1;
-            padding: 20px;
-            gap: 20px;
-        }
-        .filters {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            padding: 20px;
-            border: 1px solid #ddd;
-            background-color: #f8f8f8;
-            border-radius: 4px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        .filter-button {
-            padding: 10px;
-            border: 1px solid #ddd;
-            background-color: #fff;
-            border-radius: 4px;
-            text-align: center;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .filter-button:hover {
-            background-color: #e0e0e0;
-        }
-        .content {
-            flex: 3;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        .classes {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            padding: 20px;
-            border: 1px solid #ddd;
-            background-color: #fff;
-            border-radius: 4px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        .class-item {
-            flex: 1 1 calc(33.333% - 20px);
-            padding: 20px;
-            border: 1px solid #ddd;
-            background-color: #f9f9f9;
-            border-radius: 4px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-        .additional-info {
-            padding: 20px;
-            border: 1px solid #ddd;
-            background-color: #fff;
-            border-radius: 4px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        .additional-info h2 {
-            margin-top: 0;
-        }
-        .sidebar {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            padding: 20px;
-            border: 1px solid #ddd;
-            background-color: #f8f8f8;
-            border-radius: 4px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        .sidebar a {
-            text-decoration: none;
-            color: #333;
-            padding: 10px;
-            border: 1px solid #ddd;
-            background-color: #fff;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-        }
-        .sidebar a:hover {
-            background-color: #e0e0e0;
-        }
-    </style>
+    <title>Rate My Class</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="logo">Logo</div>
-        <div class="nav-bar">
-            <a href="#">Home</a>
-            <a href="#">Index</a>
-        </div>
-        <input type="text" class="search-bar" placeholder="Search...">
-    </header>
-    <main>
-        <div class="filters">
-            <div class="filter-button">Filter 1</div>
-            <div class="filter-button">Filter 2</div>
-            <div class="filter-button">Filter 3</div>
-            <!-- Add more filter buttons here -->
-        </div>
-        <div class="content">
-            <div class="classes">
-                <div class="class-item">Class 1</div>
-                <div class="class-item">Class 2</div>
-                <div class="class-item">Class 3</div>
-                <div class="class-item">Class 4</div>
-                <div class="class-item">Class 5</div>
-                <div class="class-item">Class 6</div>
-                <!-- Add more class items here -->
-            </div>
-            <div class="additional-info">
-                <h2>Additional Information</h2>
-                <ul>
-                    <li>Info 1</li>
-                    <li>Info 2</li>
-                    <li>Info 3</li>
-                    <!-- Add more information here -->
-                </ul>
-            </div>
-        </div>
+    <div class="container">
         <div class="sidebar">
-            <a href="#">Class Catalog</a>
-            <a href="#">Handbook</a>
-            <a href="#">Class Reviews/Ratings</a>
-            <a href="#">Club Catalog</a>
+            <div class="logo">LOGO</div>
+            <div class="filter">
+                <input type="checkbox" id="club" name="club">
+                <label for="club">Club</label>
+            </div>
+            <div class="filter">
+                <input type="checkbox" id="hand" name="hand">
+                <label for="hand">Hand</label>
+            </div>
+            <div class="website-link">
+                <a href="#">Website</a>
+            </div>
         </div>
-    </main>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <input type="text" placeholder="Search..." class="search-bar">
+                <img src="profile.png" class="profile">
+            </div>
+            
+            <!-- Filters Row -->
+            <div class="filters">
+                <select class="filterSelect" name="subject">
+                  <option value="0">Any Subject</option>
+                  <option value="1">Language Arts</option>
+                  <option value="2">Music</option>
+                  <option value="3">Math</option>
+                  <option value="4">Science</option>
+                  <option value="5">CTE</option>
+                </select>
+                <select class="filterSelect" name="credits">
+                  <option value="0">Any Credit</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">4</option>
+                  <option value="4">6</option>
+                  <option value="5">8</option>
+                </select>
+                <select class="filterSelect" name="grade">
+                  <option value="0">Any Grade</option>
+                  <option value="1">9th</option>
+                  <option value="2">10th</option>
+                  <option value="3">11th</option>
+                  <option value="4">12th</option>
+                </select>
+            </div>
+
+            <!-- Classes Grid -->
+            <div class="class-grid" style="overflow-y:auto">
+                <div class="class-card">
+                    <div class="class-info long cName">AP Lit & Comp</div>
+                    <div class="class-info small">
+                      <p class="bigNumber">8</p>
+                      <p class="littleText">Rating</p>
+                    </div>
+                    <div class="class-info small">
+                      <p class="bigNumber">4</p>
+                      <p class="littleText">Credits</p>
+                    </div>
+                    <div class="class-info long cDes"></div>
+                </div>
+                <div class="class-card">
+                    <div class="class-info long cName">AP Lang</div>
+                    <div class="class-info small">
+                      <p class="bigNumber">8</p>
+                      <p class="littleText">Rating</p>
+                    </div>
+                    <div class="class-info small">
+                      <p class="bigNumber">4</p>
+                      <p class="littleText">Credits</p>
+                    </div>
+                    <div class="class-info long cDes"></div>
+                </div>
+                <div class="class-card">
+                    <div class="class-info long cName">AP Physics</div>
+                    <div class="class-info small">
+                      <p class="bigNumber">10</p>
+                      <p class="littleText">Rating</p>
+                    </div>
+                    <div class="class-info small">
+                      <p class="bigNumber">2</p>
+                      <p class="littleText">Credits</p>
+                    </div>
+                    <div class="class-info long cDis"></div>
+                </div>
+                <div class="class-card">
+                    <div class="class-info long cName">Lunch</div>
+                    <div class="class-info small">
+                      <p class="bigNumber">10</p>
+                      <p class="littleText">Rating</p>
+                    </div>
+                    <div class="class-info small">
+                      <p class="bigNumber">0</p>
+                      <p class="littleText">Credits</p>
+                    </div>
+                    <div class="class-info long cDis"></div>
+                </div>
+                <div class="class-card">
+                    <div class="class-info long cName">AP Biology</div>
+                    <div class="class-info small">
+                      <p class="bigNumber">2</p>
+                      <p class="littleText">Rating</p>
+                    </div>
+                    <div class="class-info small">
+                      <p class="bigNumber">4</p>
+                      <p class="littleText">Credits</p>
+                    </div>
+                    <div class="class-info long cDis"></div>
+                </div>
+                <div class="class-card">
+                    <div class="class-info long cName">AP Chemestry</div>
+                    <div class="class-info small">
+                      <p class="bigNumber">1</p>
+                      <p class="littleText">Rating</p>
+                    </div>
+                    <div class="class-info small">
+                      <p class="bigNumber">4</p>
+                      <p class="littleText">Credits</p>
+                    </div>
+                    <div class="class-info long cDis"></div>
+                </div>
+                <div class="class-card">
+                    <div class="class-info long cName">Lunch</div>
+                    <div class="class-info small">
+                      <p class="bigNumber">10</p>
+                      <p class="littleText">Rating</p>
+                    </div>
+                    <div class="class-info small">
+                      <p class="bigNumber">0</p>
+                      <p class="littleText">Credits</p>
+                    </div>
+                    <div class="class-info long cDis"></div>
+                </div>
+                <div class="class-card">
+                    <div class="class-info long cName">Orcheastra</div>
+                    <div class="class-info small">
+                      <p class="bigNumber">3</p>
+                      <p class="littleText">Rating</p>
+                    </div>
+                    <div class="class-info small">
+                      <p class="bigNumber">4</p>
+                      <p class="littleText">Credits</p>
+                    </div>
+                    <div class="class-info long cDis"></div>
+                </div>
+                <div class="class-card">
+                    <div class="class-info long cName">American Lit</div>
+                    <div class="class-info small">
+                      <p class="bigNumber">8</p>
+                      <p class="littleText">Rating</p>
+                    </div>
+                    <div class="class-info small">
+                      <p class="bigNumber">4</p>
+                      <p class="littleText">Credits</p>
+                    </div>
+                    <div class="class-info long cDis"></div>
+                </div>
+            </div>
+            </div>
+        </div>
 </body>
 </html>
