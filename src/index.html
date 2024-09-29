@@ -1,25 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+ 
 <head>
+  
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rate My Class</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+/* Expanded state for the class cards */
+.class-card.expanded {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    height: 80%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    background-color: white;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.5);
+}
+
+/* Prevent body scroll when the card is expanded */
+body.expanded-card {
+    overflow: hidden;
+}
+</style>
+
 </head>
+
 <body>
     <div class="container">
         <div class="sidebar">
-            <div class="logo">LOGO</div>
             <div class="filter">
-                <input type="checkbox" id="club" name="club">
-                <label for="club">Club</label>
-            </div>
-            <div class="filter">
-                <input type="checkbox" id="hand" name="hand">
-                <label for="hand">Hand</label>
-            </div>
-            <div class="website-link">
-                <a href="#">Website</a>
+                
             </div>
         </div>
 
@@ -69,7 +83,7 @@
                       <p class="bigNumber">4</p>
                       <p class="littleText">Credits</p>
                     </div>
-                    <div class="class-info long cDes"></div>
+                    <div class="class-info long cDes">Hi Radha</div>
                 </div>
                 <div class="class-card">
                     <div class="class-info long cName">AP Lang</div>
@@ -170,5 +184,6 @@
             </div>
             </div>
         </div>
+<script src="./script.js"></script>
 </body>
 </html>
