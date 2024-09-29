@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rate My Class</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+/* Expanded state for the class cards */
+.class-card.expanded {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    height: 80%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    background-color: white;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.5);
+}
+
+/* Prevent body scroll when the card is expanded */
+body.expanded-card {
+    overflow: hidden;
+}
+</style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="filter">
+                
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <input type="text" placeholder="Search..." class="search-bar">
+                <img src="profile.png" class="profile">
+            </div>
+            
+            <div class="title-container">
+                <span class="title-part">CLASS NAME</span>
+                <span class="separator">·</span>
+                <span class="title-part">DEP</span>
+            </div>
+            <div class="full-width-header">
+                <span class="h1-part">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="separator">·</span>
+                    <span class="h1-part">credits</span>
+                </span>
+            </div>
+<script src="./script.js"></script>
+</body>
+</html>

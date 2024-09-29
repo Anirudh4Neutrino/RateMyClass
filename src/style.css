@@ -23,6 +23,26 @@ body {
     display: flex;
 }
 
+.title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em; /* Adjust size as needed */
+    color: purple; /* Adjust color as needed */
+  }
+  
+  .checked {
+    color: orange;
+  }
+
+  .title-part {
+    margin: 0 5px; /* Adjust spacing as needed */
+  }
+  
+  .separator {
+    margin: 0 5px; /* Adjust spacing as needed */
+  }
+  
 /* Sidebar Styles */
 .sidebar {
     width: 5vw;
@@ -54,6 +74,12 @@ body {
 /* Main Content Styles */
 .main-content {
     width: 95vw;
+}
+
+.full-width-header {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    height: 100vh;          /* Full viewport height for vertical centering */
 }
 
 .header {
