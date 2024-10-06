@@ -27,7 +27,7 @@ body {
 .sidebar {
     z-index: 900;
     width: 5vw;
-    background-color: #7e9ea6;
+    background-color: #134B57;
     color: white;
     display: flex;
     flex-direction: column;
@@ -51,7 +51,7 @@ body {
   transition: font-size 0.15s ease;
 }
 .sidebarItem:hover {
-  background: #76939c;
+  background: #185c6b;
   font-size: 2.1vw;
 }
 .sidebarItem:hover > .menuPic {
@@ -89,8 +89,7 @@ body {
 }
 
 .header {
-    background: rgb(57,82,88);
-    background: linear-gradient(270deg, rgba(57,82,88,1) 0%, rgba(126,158,166,1) 100%);
+    background: #134B57;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -186,69 +185,94 @@ body {
 /* Classes Grid */
 .class-grid {
   /* top | right | bottom | left */
-    padding: 0 2vw 0 2vw;
+    height: 85vh;
+    padding: 2.5vh;
     display: grid;
-    grid-template-columns: 21.625vw 21.625vw 21.625vw 21.625vw;
-    column-gap: 1.5vw;
-    row-gap: 1.5vw;
-    height: 82.5vh;
+    grid-template-columns: 35.3vh 35.3vh 35.3vh 35.3vh;
+    column-gap: 0;
+    row-gap: 2vh;
+    height: 95vh;
     width: 95vw;
+    border: 2px solid black;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
-.class-card {
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    height: 36vh;
-    width: 21.625vw;
-    border: 1px solid black;
-}
-.class-card-title {
-  height: 15vh;
-  width: 100%;
-}
 
 .sidebar:hover {
-  background-color: #657e85;
+  background-color: #165766;
   width: 17.5vw;
 }
-
-/* Class page */
-
-#course-title{
+.classHeader {
+  width: 27.3vh;
   display: flex;
-  justify-content: center;
   align-items: center;
-}
-.wrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: baseline; /* NEW */
-}
-.tags {
-  background-color: #ddd;
-  padding: 5px;
-}
-.stars,
-.rating-distribution,
-.course-description,
-.prerequisites {
-  border-top: 1px solid #000;
-  padding-top: 10px;
-  margin-top: 10px;
-}
-.rating-distribution span,
-.prerequisites span {
-  font-weight: bold;
-}
-.header1 {
-  display: flex;
   justify-content: space-between;
-  align-items: center;
-  height: 10vh;
-  font-size: 9vh;
-  width: 95vw;
 }
-.department {
-  background-color:#ffffff;
-  padding: None
+.classHeader > span {
+  width: 5vh;
+}
+.classIcon {
+  height: 5vh;
+  width: 5vh;
+}
+.className {
+  width: 17.3vh
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 150%;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+}
+.classRate {
+  margin-top: 1vh;
+  padding: 0 1vh 0 1vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 6vh;
+  width: 27.3vh;
+  border: 1px solid black;
+  border-radius: 2vh;
+  backdrop-filter: saturate(80%);
+}
+.classDes {
+  padding: 1%;
+  margin-top: 1vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: auto;
+  font-size: auto;
+  
+}
+.classCard {
+  border: 3px solid black;
+  height: min-content;
+  width: 30.3vh;
+  padding: 1vh;
+  cursor: default;
+  border-radius: 2vh;
+}
+
+.history {
+  background: #81A489;
+}
+.english {
+  background: #F2A054;
+}
+.math {
+  background: #F1D8B5;
+}
+.arts {
+  background: #C04D31;
+}
+.science {
+  background: #8043AD;
+}
+.music {
+  background: #42A6A9;
 }
