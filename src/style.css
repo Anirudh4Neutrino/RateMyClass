@@ -1,1 +1,254 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+:root {
+    height: 100%
+}
 
+
+body {
+    background-color: #f4f4f4;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    z-index: 900;
+    width: 5vw;
+    background-color: #7e9ea6;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    height: 100vh;
+    transition: 0.3s all ease-out;
+    position: fixed;
+}
+.sidebarItem {
+  padding-left: 0.5vw;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 100%;
+  height: 10vh;
+  overflow: clip;
+  /*border: 2px solid white;*/
+  font-size: 2vw;
+  color: black;
+  font-weight: bold;
+  transition: font-size 0.15s ease;
+}
+.sidebarItem:hover {
+  background: #76939c;
+  font-size: 2.1vw;
+}
+.sidebarItem:hover > .menuPic {
+  height: 4.1vw;
+  width: 4.1vw;
+}
+
+.menuPic {
+  height: 4vw;
+  width: 4vw;
+  margin-right: 1vw;
+  transition: all 0.15s ease;
+}
+.logo {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.website-link {
+    margin-top: auto;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.website-link a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Main Content Styles */
+.main-content {
+    width: 95vw;
+  left: 5vw;
+  position: absolute;
+}
+
+.header {
+    background: rgb(57,82,88);
+    background: linear-gradient(270deg, rgba(57,82,88,1) 0%, rgba(126,158,166,1) 100%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    font-size: 9vh;
+    width: 95vw;
+}
+.header > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  margin: 0 auto;
+  text-align: center;
+  height: inherit;
+}
+.profileHolder {
+  display: flex;
+  align-items: center;
+  height: 10vh;
+}
+.profile {
+  height: 80%;
+  border: 5px solid black;
+  border-radius: 50%;
+  margin-right: 1vw;
+  transition: background 0.3s;
+}
+.profile:hover {
+  background: #4c6b73;
+}
+
+/* Filter Buttons */
+.filters {
+    width: 95vw;
+    height: 5vh;
+  /*  display:flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 1vw;
+    padding-top: 0.9vw;*/
+}
+/*.filterIcon {
+  float: right;
+  height: 100%;
+  margin-right: 2vw;
+  display:flex;
+  align-items: center;
+}*/
+.filterIcon {
+  display:flex;
+  align-items: center;
+  font-size: 5vh;
+  float: right;
+  margin-right: 2vw;
+  margin-top: 1vh;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+.filterIcon:hover {
+  background-color: lightgrey;
+}
+
+.filterArea {
+    display: flex;
+    flex-wrap: nowrap; 
+    justify-content: flex-start; 
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    height: 100%;
+    padding: 0 1vw 0 1vw;
+}
+.filterArea::-webkit-scrollbar {
+    height: 0.5vh;
+}
+
+.filterArea::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.filterArea::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+
+.filterChip {
+  display: inline-block;
+}
+/* Classes Grid */
+.class-grid {
+  /* top | right | bottom | left */
+    padding: 0 2vw 0 2vw;
+    display: grid;
+    grid-template-columns: 21.625vw 21.625vw 21.625vw 21.625vw;
+    column-gap: 1.5vw;
+    row-gap: 1.5vw;
+    height: 82.5vh;
+    width: 95vw;
+}
+
+.class-card {
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 36vh;
+    width: 21.625vw;
+    border: 1px solid black;
+}
+.class-card-title {
+  height: 15vh;
+  width: 100%;
+}
+
+.sidebar:hover {
+  background-color: #657e85;
+  width: 17.5vw;
+}
+
+/* Class page */
+
+#course-title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline; /* NEW */
+}
+.tags {
+  background-color: #ddd;
+  padding: 5px;
+}
+.stars,
+.rating-distribution,
+.course-description,
+.prerequisites {
+  border-top: 1px solid #000;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+.rating-distribution span,
+.prerequisites span {
+  font-weight: bold;
+}
+.header1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+  font-size: 9vh;
+  width: 95vw;
+}
+.department {
+  background-color:#ffffff;
+  padding: None
+}
