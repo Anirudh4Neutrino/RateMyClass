@@ -1,5 +1,6 @@
 class Class {
-    constructor(subject, usualGrade, prerequisite, duration, honorsAP, description, averageGrade, ratings = [], comments = []) {
+    constructor(dualCredit, subject, usualGrade, prerequisite, duration, honorsAP, description, averageGrade, ratings = [], comments = [], averageTimePerWeek) {
+        this.dualCredit = dualCredit;
         this.subject = subject;
         this.usualGrade = usualGrade;
         this.prerequisite = prerequisite;
@@ -7,8 +8,18 @@ class Class {
         this.honorsAP = honorsAP; // 'honors', 'AP', or 'none'
         this.description = description;
         this.averageGrade = averageGrade;
-        this.ratings = ratings;
+        this.ratings = ratings.filter(rating => this.validateRating(rating));
         this.comments = comments;
+        this.averageTimePerWeek = averageTimePerWeek;
+    }
+
+    validateRating(rating) {
+        if (rating >= 0 && rating <= 5) {
+            return true;
+        } else {
+            console.log(`Invalid rating: ${rating}. Rating should be between 0 and 5.`);
+            return false;
+        }
     }
 
     getAverageRating() {
@@ -18,6 +29,7 @@ class Class {
     }
 
     // Getters
+    getDualCredit() { return this.dualCredit; }
     getSubject() { return this.subject; }
     getUsualGrade() { return this.usualGrade; }
     getPrerequisite() { return this.prerequisite; }
@@ -27,9 +39,12 @@ class Class {
     getAverageGrade() { return this.averageGrade; }
     getRatings() { return this.ratings; }
     getComments() { return this.comments; }
+    getAverageTimePerWeek() { return this.averageTimePerWeek; }
 
+    // Display info in JSON format
     toJSON() {
         return JSON.stringify({
+            dualCredit: this.dualCredit,
             subject: this.subject,
             usualGrade: this.usualGrade,
             prerequisite: this.prerequisite,
@@ -39,7 +54,8 @@ class Class {
             averageGrade: this.averageGrade,
             averageRating: this.getAverageRating(),
             ratings: this.ratings,
-            comments: this.comments
+            comments: this.comments,
+            averageTimePerWeek: this.averageTimePerWeek
         }, null, 2); // Indent with 2 spaces for readability
     }
 }
