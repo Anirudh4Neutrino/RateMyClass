@@ -5,185 +5,212 @@
   
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rate My Class</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Courserr</title>
+    
+    <link rel="icon" href="logo.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons"
+      rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+      <link rel="stylesheet" href="style.css">
+    <script type="importmap">
+    {
+      "imports": {
+        "@material/web/": "https://esm.run/@material/web/"
+      }
+    }
+  </script>
+  <script type="module">
+    import '@material/web/all.js';
+    import {styles as typescaleStyles} from '@material/web/typography/md-typescale-styles.js';
+
+    document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+  </script>
+
     <style>
-/* Expanded state for the class cards */
-.class-card.expanded {
+/* Popup Menu styling */
+.popup-menu {
     position: fixed;
+    display: none;
     top: 50%;
     left: 50%;
-    width: 80%;
-    height: 80%;
+    width: 60vw;
+    height: 60vh;
+    background-color: white;
     transform: translate(-50%, -50%);
     z-index: 999;
-    background-color: white;
-    box-shadow: 0px 0px 15px rgba(0,0,0,0.5);
-}
-
-/* Prevent body scroll when the card is expanded */
-body.expanded-card {
+    grid-template-areas: 
+    "icon title title close"
+    "teach teach credit credit"
+    "star star star star"
+    "desc desc desc desc"
+    "back more more next";
     overflow: hidden;
+    column-gap: 0;
+    opacity: 0;
 }
-</style>
+/* Show the popup */
+.popup-menu.show {
+    display: grid;
+    opacity: 1;
+}
 
+
+/* Overlay to darken background */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+}
+
+/* Show the overlay */
+.popup-overlay.show {
+    display: block;
+}
+
+.popup-menu > div {
+    border: 1px solid black;
+    height: 12vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+      }
+      
+.icon {
+  grid-area: icon;
+  width: 15vw;
+}
+.title {
+  grid-area: title;
+  width: 30vw;
+}
+.teacher {
+  grid-area: teach;
+  width: 30vw;
+}
+.credit {
+  grid-area: credit;
+  width: 30vw;
+}
+.star {
+  grid-area: star;
+  width: 60vw;
+}
+.desc {
+  grid-area: desc;
+  width: 60vw;
+}
+.back {
+  grid-area: back;
+  width: 15vw;
+}
+.more {
+  grid-area: more;
+  width: 30vw;
+}
+.next {
+  grid-area: next;
+  width: 15vw;
+}
+
+</style>
 </head>
 
 <body>
     <div class="container">
         <div class="sidebar">
-            <div class="filter">
-                
-            </div>
+          <div class="sidebarItem">
+            <img src="homeIcon.png" class="menuPic">Home
+          </div>
+          <div class="sidebarItem">
+            <img src="handbookIcon.png" class="menuPic" onclick="window.open('https://docs.google.com/document/d/1iLO7uRkVxm9l6DluWa__YLi7tG0uxzpmIj4AdxPwc4g/edit', '_blank').focus();">Handbook
+          </div>
+          <div class="sidebarItem" onclick="window.open('https://ameshighathletics.org/activities/?per_page=12&page=1', '_blank').focus();">
+            
+            <img src="clubsIcon.png" class="menuPic">Clubs & Activities
+          </div>
+          <div class="sidebarItem">
+            <img src="staredIcon.png" class="menuPic">Favorites
+          </div>
+          <div class="sidebarItem">
+            <img src="academicPlanIcon.png" class="menuPic">Academic Plan
+          </div>
+          <div class="sidebarItem">
+            <img src="codeIcon.png" class="menuPic" onclick="window.open('https://github.com/Anirudh4Neutrino/RateMyClass', '_blank').focus();">Code
+          </div>
+          
         </div>
 
         <!-- Main Content -->
         <div class="main-content">
             <div class="header">
-                <input type="text" placeholder="Search..." class="search-bar">
-                <img src="profile.png" class="profile">
+                <div class="title"> 
+                  <strong>Course<i>rr</i></strong>
+                </div>
+            <!--    <div class="profileHolder">
+                  <img src="profileIcon.png" class="profile">
+                </div>-->
             </div>
             
             <!-- Filters Row -->
             <div class="filters">
-                <select class="filterSelect" name="subject">
-                  <option value="0">Any Subject</option>
-                  <option value="1">Language Arts</option>
-                  <option value="2">Music</option>
-                  <option value="3">Math</option>
-                  <option value="4">Science</option>
-                  <option value="5">CTE</option>
-                </select>
-                <select class="filterSelect" name="credits">
-                  <option value="0">Any Credit</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">4</option>
-                  <option value="4">6</option>
-                  <option value="5">8</option>
-                </select>
-                <select class="filterSelect" name="grade">
-                  <option value="0">Any Grade</option>
-                  <option value="1">9th</option>
-                  <option value="2">10th</option>
-                  <option value="3">11th</option>
-                  <option value="4">12th</option>
-                </select>
+ <!--             <md-chip-set>
+<md-assist-chip label="Filters" avatar>
+    <img slot="icon" src="filterIcon.png">
+  </md-assist-chip>
+</md-chip-set>-->
+                <md-chip-set class="filterArea">
+                  <span class="filterChip">  <md-filter-chip label="English"></md-filter-chip></span>
+                  <span class="filterChip">  <md-filter-chip label="Mathematics"></md-filter-chip></span>
+                  <span class="filterChip">  <md-filter-chip label="Music"></md-filter-chip></span>
+                  <span class="filterChip">  <md-filter-chip label="Physical Education"></md-filter-chip></span>
+                  <span class="filterChip">  <md-filter-chip label="Health"></md-filter-chip></span>
+                  <span class="filterChip">  <md-filter-chip label="Science"></md-filter-chip></span>
+                  <span class="filterChip">  <md-filter-chip label="Social Studies"></md-filter-chip></span>
+                  <span class="filterChip">  <md-filter-chip label="World Languages"></md-filter-chip></span>
+                  <span class="filterChip">  <md-filter-chip label="Other"></md-filter-chip></span>
+                  <span class="filterChip">  <md-filter-chip label="Advanced Placement (AP)"></md-filter-chip></span>
+                  <span class="filterChip">  <md-filter-chip label="9th Grade"></md-filter-chip></span>
+                  <span class="filterChip">  <md-filter-chip label="10th Grade"></md-filter-chip></span>
+                  <span class="filterChip">  <md-filter-chip label="11th Grade"></md-filter-chip></span>
+                  <span class="filterChip">  <md-filter-chip label="12th Grade"></md-filter-chip></span>
+                </md-chip-set>
             </div>
 
             <!-- Classes Grid -->
-            <div class="class-grid" style="overflow-y:auto">
+            <div class="class-grid" style="overflow-y:auto; display: none;" >
                 <div class="class-card">
-                    <div class="class-info long cName">AP Lit & Comp</div>
-                    <div class="class-info small">
-                      <p class="bigNumber">8</p>
-                      <p class="littleText">Rating</p>
-                    </div>
-                    <div class="class-info small">
-                      <p class="bigNumber">4</p>
-                      <p class="littleText">Credits</p>
-                    </div>
-                    <div class="class-info long cDes">Hi Radha</div>
-                </div>
-                <div class="class-card">
-                    <div class="class-info long cName">AP Lang</div>
-                    <div class="class-info small">
-                      <p class="bigNumber">8</p>
-                      <p class="littleText">Rating</p>
-                    </div>
-                    <div class="class-info small">
-                      <p class="bigNumber">4</p>
-                      <p class="littleText">Credits</p>
-                    </div>
-                    <div class="class-info long cDes"></div>
-                </div>
-                <div class="class-card">
-                    <div class="class-info long cName">AP Physics</div>
-                    <div class="class-info small">
-                      <p class="bigNumber">10</p>
-                      <p class="littleText">Rating</p>
-                    </div>
-                    <div class="class-info small">
-                      <p class="bigNumber">2</p>
-                      <p class="littleText">Credits</p>
-                    </div>
-                    <div class="class-info long cDis"></div>
-                </div>
-                <div class="class-card">
-                    <div class="class-info long cName">Lunch</div>
-                    <div class="class-info small">
-                      <p class="bigNumber">10</p>
-                      <p class="littleText">Rating</p>
-                    </div>
-                    <div class="class-info small">
-                      <p class="bigNumber">0</p>
-                      <p class="littleText">Credits</p>
-                    </div>
-                    <div class="class-info long cDis"></div>
-                </div>
-                <div class="class-card">
-                    <div class="class-info long cName">AP Biology</div>
-                    <div class="class-info small">
-                      <p class="bigNumber">2</p>
-                      <p class="littleText">Rating</p>
-                    </div>
-                    <div class="class-info small">
-                      <p class="bigNumber">4</p>
-                      <p class="littleText">Credits</p>
-                    </div>
-                    <div class="class-info long cDis"></div>
-                </div>
-                <div class="class-card">
-                    <div class="class-info long cName">AP Chemestry</div>
-                    <div class="class-info small">
-                      <p class="bigNumber">1</p>
-                      <p class="littleText">Rating</p>
-                    </div>
-                    <div class="class-info small">
-                      <p class="bigNumber">4</p>
-                      <p class="littleText">Credits</p>
-                    </div>
-                    <div class="class-info long cDis"></div>
-                </div>
-                <div class="class-card">
-                    <div class="class-info long cName">Lunch</div>
-                    <div class="class-info small">
-                      <p class="bigNumber">10</p>
-                      <p class="littleText">Rating</p>
-                    </div>
-                    <div class="class-info small">
-                      <p class="bigNumber">0</p>
-                      <p class="littleText">Credits</p>
-                    </div>
-                    <div class="class-info long cDis"></div>
-                </div>
-                <div class="class-card">
-                    <div class="class-info long cName">Orcheastra</div>
-                    <div class="class-info small">
-                      <p class="bigNumber">3</p>
-                      <p class="littleText">Rating</p>
-                    </div>
-                    <div class="class-info small">
-                      <p class="bigNumber">4</p>
-                      <p class="littleText">Credits</p>
-                    </div>
-                    <div class="class-info long cDis"></div>
-                </div>
-                <div class="class-card">
-                    <div class="class-info long cName">American Lit</div>
-                    <div class="class-info small">
-                      <p class="bigNumber">8</p>
-                      <p class="littleText">Rating</p>
-                    </div>
-                    <div class="class-info small">
-                      <p class="bigNumber">4</p>
-                      <p class="littleText">Credits</p>
-                    </div>
-                    <div class="class-info long cDis"></div>
+                  <div class=".class-card-title">AP Lit</div>
                 </div>
             </div>
             </div>
         </div>
+        <!-- Popup overlay to darken the background -->
+<div class="popup-overlay"></div>
+
+<!-- Popup menu container -->
+<div class="popup-menu">
+      <div class="icon">
+      </div>
+      <div class="title">APUSH</div>
+      <div class="close" onclick="hidePopup()">X</div>
+      <div class="teacher">Mrs. Gillette</div>
+      <div class="credit">10</div>
+      <div class="star">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+      <div class="desc">This class is so fun</div>
+      <div class="back">&larr;</div>
+      <div class="more">More</div>
+      <div class="next">&rarr;</div>
+    </div>
+
 <script src="./script.js"></script>
 </body>
 </html>
