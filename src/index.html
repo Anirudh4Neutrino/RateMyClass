@@ -13,8 +13,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons"
       rel="stylesheet">
+      
       <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
       <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script type="importmap">
     {
       "imports": {
@@ -121,7 +124,19 @@
   width: 15vw;
 }
 
+
 </style>
+<style>
+.material-symbols-rounded {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48;
+  font-size: 4vh;
+}
+</style>
+
 </head>
 
 <body>
@@ -161,7 +176,7 @@
             </div>
             
             <!-- Filters Row -->
-            <div class="filters">
+            <div class="filters" style="display: none">
  <!--             <md-chip-set>
 <md-assist-chip label="Filters" avatar>
     <img slot="icon" src="filterIcon.png">
@@ -186,31 +201,396 @@
             </div>
 
             <!-- Classes Grid -->
-            <div class="class-grid" style="overflow-y:auto; display: none;" >
-                <div class="class-card">
-                  <div class=".class-card-title">AP Lit</div>
+            <div class="class-grid">
+                <div class="classCard history">
+                  <div class="classHeader">
+                    <span class="material-symbols-rounded" style="font-size: 5vh">history_edu</span>
+                    <div class="className"><u>APUSH</u></div>
+                    <span class="material-symbols-rounded" style="cursor: pointer;font-variation-settings:'FILL' 0" onclick="fav(this)">bookmark</span>
+                  </div>
+                  <div class="classRate">
+                   <span class="material-symbols-rounded">star</span>
+                   <span class="material-symbols-rounded">star</span>
+                   <span class="material-symbols-rounded">star</span>
+                   <span class="material-symbols-rounded">star_half</span>
+                   <span class="material-symbols-rounded"  style="font-variation-settings:'FILL' 0">star</span>
+                  </div>
+                  <div class="classDes">A dive into American Histroy from Pre-Columbus to now.</div>
                 </div>
+                <div class="classCard math">
+                  <div class="classHeader">
+                    <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0;font-size: 5vh">calculate</span>
+                    <div class="className"><u>Calculus</u></div>
+                    <span class="material-symbols-rounded" style="cursor: pointer;font-variation-settings:'FILL' 0" onclick="fav(this)">bookmark</span>
+                  </div>
+                  <div class="classRate">
+                   <span class="material-symbols-rounded">star</span>
+                   <span class="material-symbols-rounded">star</span>
+                   <span class="material-symbols-rounded">star_half</span>
+                   <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0">star</span>
+                   <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0">star</span>
+                  </div>
+                  <div class="classDes">A class about Calculus.</div>
+                </div>
+                <div class="classCard english">
+                  <div class="classHeader">
+                    <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0;font-size: 5vh">book_2</span>
+                    <div class="className"><u>AP Lit & Comp</u></div>
+                    <span class="material-symbols-rounded" style="cursor: pointer;font-variation-settings:'FILL' 0" onclick="fav(this)">bookmark</span>
+                  </div>
+                  <div class="classRate">
+                   <span class="material-symbols-rounded">star</span>
+                   <span class="material-symbols-rounded">star</span>
+                   <span class="material-symbols-rounded">star</span>
+                   <span class="material-symbols-rounded">star</span>
+                   <span class="material-symbols-rounded">star_half</span>
+                  </div>
+                  <div class="classDes">Learn about how to analyze diffrent form of litature.</div>
+                </div>
+                <div class="classCard arts">
+                  <div class="classHeader">
+                    <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0;font-size: 5vh">brush</span>
+                    <div class="className"><u>Art</u></div>
+                    <span class="material-symbols-rounded" style="cursor: pointer;font-variation-settings:'FILL' 0" onclick="fav(this)">bookmark</span>
+                  </div>
+                  <div class="classRate">
+                   <span class="material-symbols-rounded">star</span>
+                   <span class="material-symbols-rounded">star</span>
+                   <span class="material-symbols-rounded">star</span>
+                   <span class="material-symbols-rounded">star</span>
+                   <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0">star</span>
+                  </div>
+                  <div class="classDes">Paint and draw things idk.</div>
+                </div>
+                <div class="classCard arts">
+                  <div class="classHeader">
+                      <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0;font-size: 5vh">movie</span>
+                      <div class="className"><u>History of Cinema</u></div>
+                      <span class="material-symbols-rounded" style="cursor: pointer;font-variation-settings:'FILL' 0" onclick="fav(this)">bookmark</span>
+                  </div>
+                  <div class="classRate">
+                      <span class="material-symbols-rounded">star</span>
+                      <span class="material-symbols-rounded">star</span>
+                      <span class="material-symbols-rounded">star</span>
+                      <span class="material-symbols-rounded">star</span>
+                      <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0">star</span>
+                  </div>
+                  <div class="classDes">Explore the evolution of cinema from silent films to modern blockbusters.</div>
+                </div>
+                <div class="classCard science">
+                  <div class="classHeader">
+                      <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0;font-size: 5vh">science</span>
+                      <div class="className"><u>Forensic Science</u></div>
+                      <span class="material-symbols-rounded" style="cursor: pointer;font-variation-settings:'FILL' 0" onclick="fav(this)">bookmark</span>
+                  </div>
+                  <div class="classRate">
+                      <span class="material-symbols-rounded">star</span>
+                      <span class="material-symbols-rounded">star</span>
+                      <span class="material-symbols-rounded">star</span>
+                      <span class="material-symbols-rounded">star</span>
+                      <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0">star</span>
+                  </div>
+                  <div class="classDes">Study crime scene investigation techniques and forensic analysis.</div>
+                </div>
+                <div class="classCard math">
+    <div class="classHeader">
+        <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0;font-size: 5vh">bar_chart</span>
+        <div class="className"><u>Statistics and Probability</u></div>
+        <span class="material-symbols-rounded" style="cursor: pointer;font-variation-settings:'FILL' 0" onclick="fav(this)">bookmark</span>
+    </div>
+    <div class="classRate">
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0">star</span>
+    </div>
+    <div class="classDes">Learn the foundations of data analysis and probability theory.</div>
+</div>
+
+                <div class="classCard english">
+    <div class="classHeader">
+        <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0;font-size: 5vh">edit_note</span>
+        <div class="className"><u>Modern Poetry</u></div>
+        <span class="material-symbols-rounded" style="cursor: pointer;font-variation-settings:'FILL' 0" onclick="fav(this)">bookmark</span>
+    </div>
+    <div class="classRate">
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0">star</span>
+    </div>
+    <div class="classDes">Explore contemporary poetry and craft your own verse.</div>
+</div>
+
+<div class="classCard english">
+    <div class="classHeader">
+        <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0;font-size: 5vh">auto_stories</span>
+        <div class="className"><u>Romantic Literature</u></div>
+        <span class="material-symbols-rounded" style="cursor: pointer;font-variation-settings:'FILL' 0" onclick="fav(this)">bookmark</span>
+    </div>
+    <div class="classRate">
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0">star</span>
+    </div>
+    <div class="classDes">Delve into the works of Romantic poets and novelists like Shelley and Keats.</div>
+</div>
+<div class="classCard arts">
+    <div class="classHeader">
+        <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0;font-size: 5vh">architecture</span>
+        <div class="className"><u>Architectural Design</u></div>
+        <span class="material-symbols-rounded" style="cursor: pointer;font-variation-settings:'FILL' 0" onclick="fav(this)">bookmark</span>
+    </div>
+    <div class="classRate">
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0">star</span>
+    </div>
+    <div class="classDes">Design buildings and spaces that are both functional and beautiful.</div>
+</div>
+
+<div class="classCard history">
+    <div class="classHeader">
+        <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0;font-size: 5vh">gavel</span>
+        <div class="className"><u>Political Philosophy</u></div>
+        <span class="material-symbols-rounded" style="cursor: pointer;font-variation-settings:'FILL' 0" onclick="fav(this)">bookmark</span>
+    </div>
+    <div class="classRate">
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0">star</span>
+    </div>
+    <div class="classDes">Analyze the ideas and theories that have shaped modern governance.</div>
+</div>
+<div class="classCard math">
+    <div class="classHeader">
+        <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0;font-size: 5vh">functions</span>
+        <div class="className"><u>Advanced Calculus</u></div>
+        <span class="material-symbols-rounded" style="cursor: pointer;font-variation-settings:'FILL' 0" onclick="fav(this)">bookmark</span>
+    </div>
+    <div class="classRate">
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0">star</span>
+    </div>
+    <div class="classDes">Explore complex calculus concepts for advanced math applications.</div>
+</div>
+<div class="classCard history">
+    <div class="classHeader">
+        <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0;font-size: 5vh">business_center</span>
+        <div class="className"><u>Economics and Global Trade</u></div>
+        <span class="material-symbols-rounded" style="cursor: pointer;font-variation-settings:'FILL' 0" onclick="fav(this)">bookmark</span>
+    </div>
+    <div class="classRate">
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0">star</span>
+    </div>
+    <div class="classDes">Examine the forces that drive global markets and economies.</div>
+</div>
+<div class="classCard music">
+    <div class="classHeader">
+        <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0;font-size: 5vh">music_note</span>
+        <div class="className"><u>Music Theory</u></div>
+        <span class="material-symbols-rounded" style="cursor: pointer;font-variation-settings:'FILL' 0" onclick="fav(this)">bookmark</span>
+    </div>
+    <div class="classRate">
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded">star_half</span>
+        <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0">star</span>
+        <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0">star</span>
+    </div>
+    <div class="classDes">Learn the principles of music composition and harmony.</div>
+</div>
+<div class="classCard math">
+    <div class="classHeader">
+        <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0;font-size: 5vh">calculate</span>
+        <div class="className"><u>Geometry and Spatial Reasoning</u></div>
+        <span class="material-symbols-rounded" style="cursor: pointer;font-variation-settings:'FILL' 0" onclick="fav(this)">bookmark</span>
+    </div>
+    <div class="classRate">
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0">star</span>
+    </div>
+    <div class="classDes">Understand shapes, structures, and their properties in different dimensions.</div>
+</div>
+
+<div class="classCard science">
+    <div class="classHeader">
+        <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0;font-size: 5vh">science</span>
+        <div class="className"><u>Biology</u></div>
+        <span class="material-symbols-rounded" style="cursor: pointer;font-variation-settings:'FILL' 0" onclick="fav(this)">bookmark</span>
+    </div>
+    <div class="classRate">
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded">star_half</span>
+        <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0">star</span>
+    </div>
+    <div class="classDes">Explore the complexities of living organisms and ecosystems.</div>
+</div>
+<div class="classCard english">
+    <div class="classHeader">
+        <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0;font-size: 5vh">create</span>
+        <div class="className"><u>Creative Writing</u></div>
+        <span class="material-symbols-rounded" style="cursor: pointer;font-variation-settings:'FILL' 0" onclick="fav(this)">bookmark</span>
+    </div>
+    <div class="classRate">
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0">star</span>
+    </div>
+    <div class="classDes">Unleash your imagination and develop your voice as a writer.</div>
+</div>
+
+<div class="classCard music">
+    <div class="classHeader">
+        <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0;font-size: 5vh">headset_mic</span>
+        <div class="className"><u>Intro to Sound Engineering</u></div>
+        <span class="material-symbols-rounded" style="cursor: pointer;font-variation-settings:'FILL' 0" onclick="fav(this)">bookmark</span>
+    </div>
+    
+    <div class="classRate">
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded">star_half</span>
+        <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0">star</span>
+        <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0">star</span>
+        <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0">star</span>
+    </div>
+    <div class="classDes">Discover the fundamentals of audio production and mixing techniques.</div>
+</div>
+<div class="classCard english">
+    <div class="classHeader">
+        <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0;font-size: 5vh">auto_stories</span>
+        <div class="className"><u>Romantic Literature</u></div>
+        <span class="material-symbols-rounded" style="cursor: pointer;font-variation-settings:'FILL' 0" onclick="fav(this)">bookmark</span>
+    </div>
+    <div class="classRate">
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0">star</span>
+    </div>
+    <div class="classDes">Delve into the works of Romantic poets and novelists like Shelley and Keats.</div>
+</div>
+<div class="classCard science">
+    <div class="classHeader">
+        <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0;font-size: 5vh">rocket_launch</span>
+        <div class="className"><u>Physics</u></div>
+        <span class="material-symbols-rounded" style="cursor: pointer;font-variation-settings:'FILL' 0" onclick="fav(this)">bookmark</span>
+    </div>
+    <div class="classRate">
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0">star_half</span>
+    </div>
+    <div class="classDes">Understand the fundamental laws governing matter and energy.</div>
+</div>
+<div class="classCard math">
+    <div class="classHeader">
+        <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0;font-size: 5vh">calculate</span>
+        <div class="className"><u>Calculus II</u></div>
+        <span class="material-symbols-rounded" style="cursor: pointer;font-variation-settings:'FILL' 0" onclick="fav(this)">bookmark</span>
+    </div>
+    <div class="classRate">
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded">star_half</span>
+        <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0">star</span>
+        <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0">star</span>
+    </div>
+    <div class="classDes">Dive deeper into integrals, series, and differential equations.</div>
+</div>
+
+
+<div class="classCard music">
+    <div class="classHeader">
+        <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0;font-size: 5vh">history_edu</span>
+        <div class="className"><u>Music History</u></div>
+        <span class="material-symbols-rounded" style="cursor: pointer;font-variation-settings:'FILL' 0" onclick="fav(this)">bookmark</span>
+    </div>
+    <div class="classRate">
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded">star_half</span>
+        <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0">star</span>
+        <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0">star</span>
+    </div>
+    <div class="classDes">Explore the evolution of music across different cultures and eras.</div>
+</div>
+<div class="classCard history">
+    <div class="classHeader">
+        <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0;font-size: 5vh">history</span>
+        <div class="className"><u>World History</u></div>
+        <span class="material-symbols-rounded" style="cursor: pointer;font-variation-settings:'FILL' 0" onclick="fav(this)">bookmark</span>
+    </div>
+    <div class="classRate">
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded">star_half</span>
+        <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0">star</span>
+        <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0">star</span>
+    </div>
+    <div class="classDes">Explore significant events that shaped civilizations around the globe.</div>
+</div>
+<div class="classCard english">
+    <div class="classHeader">
+        <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0;font-size: 5vh">theater_comedy</span>
+        <div class="className"><u>Shakespearean Literature</u></div>
+        <span class="material-symbols-rounded" style="cursor: pointer;font-variation-settings:'FILL' 0" onclick="fav(this)">bookmark</span>
+    </div>
+    <div class="classRate">
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded">star</span>
+        <span class="material-symbols-rounded">star_half</span>
+        <span class="material-symbols-rounded" style="font-variation-settings:'FILL' 0">star</span>
+    </div>
+    <div class="classDes">Study the plays and sonnets of Shakespeare and their impact on literature.</div>
+</div>
+
+
+
+
+
             </div>
             </div>
         </div>
-        <!-- Popup overlay to darken the background -->
-<div class="popup-overlay"></div>
-
-<!-- Popup menu container -->
-<div class="popup-menu">
-      <div class="icon">
-      </div>
-      <div class="title">APUSH</div>
-      <div class="close" onclick="hidePopup()">X</div>
-      <div class="teacher">Mrs. Gillette</div>
-      <div class="credit">10</div>
-      <div class="star">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
-      <div class="desc">This class is so fun</div>
-      <div class="back">&larr;</div>
-      <div class="more">More</div>
-      <div class="next">&rarr;</div>
-    </div>
 
 <script src="./script.js"></script>
+<script>
+function fav(element) {
+   let fillValue;
+    if (element.style.cssText.includes("1")) {
+        fillValue = "'FILL' 0";  // If it's filled, switch to unfilled.
+        
+    } else {
+        fillValue = "'FILL' 1";  // If it's unfilled, switch to filled.
+    }
+    element.style.fontVariationSettings = fillValue;
+}
+</script>
 </body>
 </html>
