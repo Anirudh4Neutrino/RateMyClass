@@ -194,7 +194,7 @@ body {
     height: 95vh;
     width: 95vw;
     border: 2px solid black;
-    overflow-x: hidden;
+    overflow-x: scroll;
     overflow-y: scroll;
 }
 
