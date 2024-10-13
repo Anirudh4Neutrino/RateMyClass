@@ -43,8 +43,6 @@ body {
 
 .menuMobile {
   display: none;
-  position: absolute; /* Make sure the icons are positioned correctly */
-    z-index: 1000; /* Ensure they are above the sidebar */
 }
 .sidebarItem {
   padding-left: 0.5vw;
@@ -84,6 +82,8 @@ body {
 }
 .mobileClose {
   display: none;
+  transition: opacity 0.75s ease;
+  opacity: 0;
 }
 .mode:hover {
   background-color: rgba(0, 0, 0, 0.1);
@@ -424,9 +424,11 @@ span {
   .menuMobile {
     display: flex;
     position: absolute;
-    height: 5vh;
-    margin-top: 2.5vh;
-    margin-left: 1.25vw;
+    height: 6vh;
+    width: 6vh;
+    margin-top: 2vh;
+    margin-left: 0.5vw;
+    margin-right: 1vw;
   }
   .home {
     display: none;
