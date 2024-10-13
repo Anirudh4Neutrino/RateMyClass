@@ -1,5 +1,5 @@
 class Class {
-    constructor(dualCredit, subject, usualGrade, prerequisite, duration, honorsAP, description, averageGrade, ratings = [], comments = [], averageTimePerWeek) {
+    constructor(dualCredit, subject, usualGrade, prerequisite, duration, honorsAP, description, averageGrade, ratings = [], comments = [], averageTimePerWeek, icon, className) {
         this.dualCredit = dualCredit;
         this.subject = subject;
         this.usualGrade = usualGrade;
@@ -11,6 +11,8 @@ class Class {
         this.ratings = ratings.filter(rating => this.validateRating(rating));
         this.comments = comments;
         this.averageTimePerWeek = averageTimePerWeek;
+        this.icon = icon;
+        this.className = className;
     }
 
     validateRating(rating) {
@@ -25,7 +27,9 @@ class Class {
     getAverageRating() {
         if (this.ratings.length === 0) return 0;
         const sum = this.ratings.reduce((acc, rating) => acc + rating, 0);
-        return (sum / this.ratings.length).toFixed(2);
+        let rate = Math.round(sum / this.ratings.length.toFixed(2));
+        return (rate);
+        
     }
 
     // Getters
@@ -40,6 +44,8 @@ class Class {
     getRatings() { return this.ratings; }
     getComments() { return this.comments; }
     getAverageTimePerWeek() { return this.averageTimePerWeek; }
+    getIcon() { return this.icon; }
+    getClassName() { return this.className; }
 
     // Display info in JSON format
     toJSON() {
@@ -55,7 +61,9 @@ class Class {
             averageRating: this.getAverageRating(),
             ratings: this.ratings,
             comments: this.comments,
-            averageTimePerWeek: this.averageTimePerWeek
+            averageTimePerWeek: this.averageTimePerWeek,
+            icon: this.icon,
+            className: this.className
         }, null, 2); // Indent with 2 spaces for readability
     }
 }
