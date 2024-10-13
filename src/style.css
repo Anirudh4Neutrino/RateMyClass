@@ -21,14 +21,15 @@ body {
 
 .container {
     display: flex;
+    width: 100vw;
 }
 
 /* Sidebar Styles */
 .sidebar {
     z-index: 900;
     width: 5vw;
-   /* background-color: #134B57;*/
-   background-color: rgba(202, 228, 235, 0.75);
+    /* background-color: #134B57;*/
+    background-color: rgba(202, 228, 235, 0.75);
     color: white;
     display: flex;
     flex-direction: column;
@@ -38,6 +39,12 @@ body {
     backdrop-filter: blur(50px);
     position: fixed;
     
+}
+
+.menuMobile {
+  display: none;
+  position: absolute; /* Make sure the icons are positioned correctly */
+    z-index: 1000; /* Ensure they are above the sidebar */
 }
 .sidebarItem {
   padding-left: 0.5vw;
@@ -75,6 +82,9 @@ body {
   font-size: 5vh;
   transition: background-color 0.1s ease, transform 0.1s ease;
 }
+.mobileClose {
+  display: none;
+}
 .mode:hover {
   background-color: rgba(0, 0, 0, 0.1);
   transform: scale(1.15,1.15);
@@ -85,22 +95,6 @@ body {
   margin-right: 1vw;
   transition: all 0.15s ease;
 }
-.logo {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-.website-link {
-    margin-top: auto;
-    font-size: 18px;
-    margin-top: 20px;
-}
-
-.website-link a {
-    color: white;
-    text-decoration: none;
-}
-
 /* Main Content Styles */
 .main-content {
     width: 95vw;
@@ -220,6 +214,7 @@ body {
     overflow-x: hidden;
     overflow-y: scroll;
 }
+
 .class-grid::-webkit-scrollbar {
     width: 0.5vw;
 }
@@ -246,6 +241,7 @@ body {
   justify-content: space-between;
   color: black;
 }
+
 .classHeader > span {
   width: 5vw;
   text-align: center;
@@ -254,7 +250,6 @@ body {
   height: 5vh;
   width: 5vw;
   text-align: center;
-  
 }
 .className {
   width: 8vw
@@ -265,7 +260,7 @@ body {
   cursor: pointer;
   font-weight: bold;
   text-align: center;
-    transition: transform 0.25s ease;
+  transition: transform 0.25s ease;
 }
 .classRate {
   margin-top: 1vh;
@@ -333,3 +328,111 @@ span {
   background: #42A6A9;
   color:#42A6A9;
 }
+.closeMenu {
+  z-index: 901;
+  opacity: 0;
+  transform: rotate(90deg);
+  transition: opacity 0.25s ease, transform 0.5s ease;
+}
+.openMenu {
+  z-index: 902;
+  transition: opacity 0.25s ease, transform 0.5s ease;
+}
+
+@media (hover: none) {
+  .sidebarItem:hover {
+  background-color: initial;
+  font-size: initial;
+  }
+  .sidebar:hover {
+    width: initial;
+  }
+.classCard:hover {
+  box-shadow: initial;
+  transform: initial;
+}
+.sidebar:hover {
+  /*background-color: #165766;*/
+  width: 5vw;
+  box-shadow: initial;
+}
+.mode {
+  display: none;
+}
+
+}
+
+@media (max-width:768px) {
+  .header {
+    width: 100vw;
+    left: 0vh;
+    height: 16vh;
+  }
+  .class-grid {
+    /* top | right | bottom | left */
+    position: absolute;
+    top: 0vh;
+    padding-left: 6.6vw;
+    column-gap: 6.6vw;
+    padding-top: 18.5vh;
+    grid-template-columns: 40vw 40vw;
+    height: 100vh;
+    width: 100vw;
+  } 
+  .classHeader {
+    width: 38vw;
+  }
+  .className {
+    width: 27vw
+  }
+  .classRate {
+    height: 6vh;
+    width: 38vw;
+  }
+  .mode {
+    display: none;
+  }
+  .sidebar {
+    width: 40vw;
+    transform: translateX(-40vw);
+    box-shadow: 0 0 5vh rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease;
+  }
+  .sidebarItem {
+    font-size: 3vh;
+  }
+  .menuPic {
+    height: 6vh;
+    width: 6vh;
+  }
+  .main-content {
+    width: 100vw;
+    left: 0vw;
+  }
+  .title {
+    margin: auto;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin-left: auto;
+    text-align: center;
+  }
+  .filterArea {
+    width: 100vw;
+    height: 5.5vh;
+  }
+  .menuMobile {
+    display: flex;
+    position: absolute;
+    height: 5vh;
+    margin-top: 2.5vh;
+    margin-left: 1.25vw;
+  }
+  .home {
+    display: none;
+  }
+  .mobileClose {
+    display: flex;
+  }
+}
+
