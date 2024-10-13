@@ -247,21 +247,22 @@ body {
   text-align: center;
 }
 .classIcon {
-  height: 5vh;
+  height: 5vw;
   width: 5vw;
   text-align: center;
 }
 .className {
-  width: 8vw
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 140%;
+  font-size: 1.5vw;
   cursor: pointer;
   font-weight: bold;
   text-align: center;
   transition: transform 0.25s ease;
 }
+
 .classRate {
   margin-top: 1vh;
   padding: 0 1vh 0 1vh;
@@ -383,7 +384,8 @@ span {
     width: 38vw;
   }
   .className {
-    width: 27vw
+    width: 27vw;
+    font-size: 1.75vh;
   }
   .classRate {
     height: 6vh;
@@ -437,4 +439,3 @@ span {
     display: flex;
   }
 }
-
