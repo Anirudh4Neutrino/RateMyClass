@@ -156,7 +156,7 @@ md-filter-chip {
       <img src="menuIcon.png" class="menuMobile openMenu" id="lines" onclick="openClose(true)">
           <img src="closeIcon.png" class="menuMobile closeMenu" id="exes" onclick="openClose(false)">
         <div class="sidebar" id="sidebar">
-          <div class="sidebarItem mobileClose" onclick="openClose(false)" style="padding-left: 7.5vh">
+          <div class="sidebarItem mobileClose" onclick="openClose(false)" id="mobileClose" style="padding-left: calc(6vh + 1vw + 0.5vw)">
             Close
           </div>
           <div class="sidebarItem home">
@@ -260,6 +260,8 @@ function modeChange(thing) {
 function openClose(closed) {
   let lines = document.getElementById('lines');
   let exes = document.getElementById('exes');
+  let text = document.getElementById('mobileClose');
+  let sidebar = document.getElementById('sidebar');
   if(closed) {
     exes.style.opacity = "1";
     exes.style.transform = "rotate(-90deg)"
@@ -267,7 +269,8 @@ function openClose(closed) {
     lines.style.opacity = "0";
     lines.style.transform = "rotate(90deg)";
     lines.style.zIndex = "1001";
-    document.getElementById('sidebar').style.transform = "translateX(0vw)"
+    sidebar.style.transform = "translateX(0vw)"
+    text.style.opacity = "1";
     
   } else {
     exes.style.opacity = "0";
@@ -276,7 +279,8 @@ function openClose(closed) {
     lines.style.opacity = "1";
     lines.style.transform = "rotate(0deg)";
     lines.style.zIndex = "1002";
-    document.getElementById('sidebar').style.transform = "translateX(-40vw)"
+    sidebar.style.transform = "translateX(-40vw)"
+    text.style.opacity = "0";
   }
 
 }

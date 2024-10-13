@@ -43,8 +43,6 @@ body {
 
 .menuMobile {
   display: none;
-  position: absolute; /* Make sure the icons are positioned correctly */
-    z-index: 1000; /* Ensure they are above the sidebar */
 }
 .sidebarItem {
   padding-left: 0.5vw;
@@ -65,12 +63,12 @@ body {
 .sidebarItem:hover {
  /* background: #185c6b;*/
   background-color: rgba(0, 0, 0, 0.1);
-  font-size: 2.1vw;
+  /*font-size: 2.1vw;*/
 }
-.sidebarItem:hover > .menuPic {
+/*.sidebarItem:hover > .menuPic {
   height: 4.1vw;
   width: 4.1vw;
-}
+}*/
 
 .mode {
   position: absolute;
@@ -84,6 +82,8 @@ body {
 }
 .mobileClose {
   display: none;
+  transition: opacity 0.75s ease;
+  opacity: 0;
 }
 .mode:hover {
   background-color: rgba(0, 0, 0, 0.1);
@@ -231,7 +231,7 @@ body {
 
 .sidebar:hover {
   /*background-color: #165766;*/
-  width: 17.5vw;
+  /*width: 17.5vw;*/
   box-shadow: 0 0 5vh rgba(0, 0, 0, 0.2);
 }
 .classHeader {
@@ -424,9 +424,11 @@ span {
   .menuMobile {
     display: flex;
     position: absolute;
-    height: 5vh;
-    margin-top: 2.5vh;
-    margin-left: 1.25vw;
+    height: 6vh;
+    width: 6vh;
+    margin-top: 2vh;
+    margin-left: 0.5vw;
+    margin-right: 1vw;
   }
   .home {
     display: none;
