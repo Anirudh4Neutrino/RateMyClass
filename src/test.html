@@ -15,6 +15,7 @@
       rel="stylesheet">
       <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
       <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="classPage.css">
     <script type="importmap">
     {
       "imports": {
@@ -162,27 +163,54 @@
                 <div class="course-container"></div>
                     <div class="header1">
                         <div class="icon">ICON</div>
-                        <div class="class-name">CLASS NAME</div>
+                        <div class="class-name">AP US History</div>
                         <div class="department">DEPARTMENT</div>
                     </div>
-                    <div class="stars">STARS ★★★☆☆</div>
-                    <div class="course-description">
-                        <h3>In-Depth Description</h3>
-                        <p>This is dummy text sample this is dummy text sample this is dummy text sample.</p>
-                    </div>
-                    <div class="prerequisites">
-                        <h3>Prerequisites (Dropdown Menu)</h3>
-                        <p>This is dummy text sample this is dummy text sample this is dummy text sample.</p>
+                    <div class="stars">
+                      <h2>In-depth Description</h2>
+                      <text class = 'description'>Description</text>
+                      <div class="prerequisites">
+                          <h2 id="prereq">Prerequisites (Dropdown Menu)</h2>
+                          
+                          <p>This is dummy text sample this is dummy text sample this is dummy text sample.</p>
+                      </div>
                     </div>
                     <div class="rating-distribution">
                         <span>RATING DISTRIBUTION</span>
-                        <p>3.2 / 5</p>
+                        <p id="number">3.2 / 5</p>
+                        <div class="starss">
+                          ★ ★ ★ ★ ★
+                        </div>
+                        <div class="toptag">
+                        <h2 class="toptags">Top tags</h2>
+                        <md-chip-set class="filterArea1">
+                          <md-filter-chip label="Good teacher"></md-filter-chip>
+                          <md-filter-chip label="Lots of homework"></md-filter-chip>
+                          <md-filter-chip label="Heavy grader"></md-filter-chip>
+                          <md-filter-chip label="Distressing"></md-filter-chip>
+                          </md-chip-set>
+                       </div>
+                       <div class="commentSection">
+                          <div class='Comment'> 
+                              <div class="ratingValues">
+                                <div class="ratingContainer">
+                                  Hello
+                                </div>
+                                <div class="ratingNum">
+                                  3.0
+                                </div>
+                              </div>
+                          </div>
+
+
+                       </div>
                     </div>
                 </div>
             </div>
-
         </div>
         
-<script src="./script.js"></script>
+<script src="./script.js">
+  
+</script>
 </body>
 </html>

@@ -1,0 +1,91 @@
+.icon{
+    font-size: 4vh;
+    margin-left: 2%;
+  }
+  
+.class-name{
+    font-size: 8vh;
+  }
+  
+.department{
+    background-color: None;
+    font-size: 4vh;
+    margin-right: 2%;
+  }
+  
+.stars{
+    padding-top: 25%;
+    font-size: 4vh;
+    margin: auto;
+    width: 95%;
+    border: 3px solid rgb(106, 106, 106);
+    padding: 10px;
+  }
+
+#prereq{
+    font-size: 4vh;
+}
+.prerequisites{
+    
+}
+#number{
+    font-size: 4vh;
+    margin: auto;
+}
+
+.rating-distribution{
+    font-size: 4vh;
+    margin-left: 2%;
+    padding: 2%;
+    width: 50%;
+}
+.description{
+    font-size:2vh;
+}
+.teachers{
+    float: right;
+  }
+  
+.toptag{
+    font-size: 2vh;
+    padding-bottom: 8%;
+    margin-bottom: 8%;
+}
+.spec-tag{
+    border: 3px solid rgb(106, 106, 106);
+    border-radius: 4vh;
+    padding: 1%;
+    margin-top: 4%;
+}
+
+.ratingValues{
+    display: flex;
+    flex-direction: column;
+}
+.ratingContainer{
+    font-weight: 600;
+    line-height: 14px;
+    margin-bottom: 4px;
+    text-transform: uppercase; 
+}
+.commentSection{
+    display: flex;
+    padding: 21px 24px 0px;
+    float: right;
+}
+.course-container{
+    display:flex;
+}
+
+.ratingNum{
+    align-self: center;
+    background: rgb(255, 241, 112);
+    height: 64px;
+    line-height: 36px;
+    margin-bottom: 8px;
+    padding: 14px 10px;
+    width: 72px;
+    font-size: 32px;
+    font-family: Poppins, sans-serif;
+    font-weight: 900;
+}
