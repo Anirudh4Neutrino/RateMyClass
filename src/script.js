@@ -3,6 +3,7 @@ let bookmarks = [];
 
 const unfilled = "style=\"font-variation-settings:'FILL' 0\"";
 
+
 function load() {
   if(sessionStorage.getItem("bookmarks") === null) {
     bookmarks = [];
@@ -162,4 +163,5 @@ function filter(type) {
   doshit();
 
 }
+
 

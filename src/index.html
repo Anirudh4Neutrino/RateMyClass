@@ -152,9 +152,14 @@ md-filter-chip {
 </head>
 
 <body onload="load();doshit()">
-    <div class="container">
-        <div class="sidebar">
-          <div class="sidebarItem">
+    <div class="container" id="fullHeightDiv">
+      <img src="menuIcon.png" class="menuMobile openMenu" id="lines" onclick="openClose(true)">
+          <img src="closeIcon.png" class="menuMobile closeMenu" id="exes" onclick="openClose(false)">
+        <div class="sidebar" id="sidebar">
+          <div class="sidebarItem mobileClose" onclick="openClose(false)" style="padding-left: 7.5vh">
+            Close
+          </div>
+          <div class="sidebarItem home">
             <img src="homeIcon.png" class="menuPic">Home
           </div>
           <div class="sidebarItem">
@@ -183,9 +188,10 @@ md-filter-chip {
 
         <!-- Main Content -->
         <div class="main-content"><div class="header">
+          
                 <div class="title"> 
                   <strong>Course<i>rr</i></strong>
-                  <!--<button onclick="doshit()" style="height: 10vh; width: 10vw">Click Me</button>-->
+                  <!--<button onclick="menuOpen()" style="height: 10vh; width: 10vw">Click Me</button>-->
                   <span class="material-symbols-rounded mode" style="font-size:5vh" onclick="modeChange(this)">light_mode</span>
                 </div>
                 <div>
@@ -250,6 +256,29 @@ function modeChange(thing) {
     thing.innerText = "light_mode";
   }  
   
+}
+function openClose(closed) {
+  let lines = document.getElementById('lines');
+  let exes = document.getElementById('exes');
+  if(closed) {
+    exes.style.opacity = "1";
+    exes.style.transform = "rotate(-90deg)"
+    exes.style.zIndex = "1002";
+    lines.style.opacity = "0";
+    lines.style.transform = "rotate(90deg)";
+    lines.style.zIndex = "1001";
+    document.getElementById('sidebar').style.transform = "translateX(0vw)"
+    
+  } else {
+    exes.style.opacity = "0";
+    exes.style.transform = "rotate(0deg)"
+    exes.style.zIndex = "1001";
+    lines.style.opacity = "1";
+    lines.style.transform = "rotate(0deg)";
+    lines.style.zIndex = "1002";
+    document.getElementById('sidebar').style.transform = "translateX(-40vw)"
+  }
+
 }
 </script>
 </body >
