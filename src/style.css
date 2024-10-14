@@ -11,7 +11,7 @@
 
 
 body {
-    background-color: #f4f4f4;
+    background-color: white;
     overflow: hidden;
     height: 100vh;
     width: 100vw;
@@ -21,26 +21,35 @@ body {
 
 .container {
     display: flex;
+    width: 100vw;
 }
 
 /* Sidebar Styles */
 .sidebar {
     z-index: 900;
     width: 5vw;
-    background-color: #134B57;
+    /* background-color: #134B57;*/
+    background-color: rgba(202, 228, 235, 0.75);
     color: white;
     display: flex;
     flex-direction: column;
     align-items: start;
     height: 100vh;
-    transition: 0.3s all ease-out;
+    transition: 0.2s width ease-out, 0.3s background ease-out, box-shadow 0.3s ease-out;
+    backdrop-filter: blur(50px);
     position: fixed;
+    
+}
+
+.menuMobile {
+  display: none;
 }
 .sidebarItem {
   padding-left: 0.5vw;
   display: flex;
   justify-content: left;
   align-items: center;
+  background-color: rgba(0, 0, 0, 0);
   width: 100%;
   height: 10vh;
   overflow: clip;
@@ -49,9 +58,11 @@ body {
   color: black;
   font-weight: bold;
   transition: font-size 0.15s ease;
+  cursor: pointer;
 }
 .sidebarItem:hover {
-  background: #185c6b;
+ /* background: #185c6b;*/
+  background-color: rgba(0, 0, 0, 0.1);
   font-size: 2.1vw;
 }
 .sidebarItem:hover > .menuPic {
@@ -59,28 +70,31 @@ body {
   width: 4.1vw;
 }
 
+.mode {
+  position: absolute;
+  float: right;
+  margin-left: 30vw;
+  margin-top: 2.5vh;
+  padding: 0.5%;
+  border-radius: 25%;
+  font-size: 5vh;
+  transition: background-color 0.1s ease, transform 0.1s ease;
+}
+.mobileClose {
+  display: none;
+  transition: opacity 0.75s ease;
+  opacity: 0;
+}
+.mode:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  transform: scale(1.15,1.15);
+}
 .menuPic {
   height: 4vw;
   width: 4vw;
   margin-right: 1vw;
   transition: all 0.15s ease;
 }
-.logo {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-.website-link {
-    margin-top: auto;
-    font-size: 18px;
-    margin-top: 20px;
-}
-
-.website-link a {
-    color: white;
-    text-decoration: none;
-}
-
 /* Main Content Styles */
 .main-content {
     width: 95vw;
@@ -89,23 +103,27 @@ body {
 }
 
 .header {
-    background: #134B57;
+    z-index: 50;
+    background-color: rgba(202, 228, 235, 0.75);
+    backdrop-filter: blur(10vh);
+    will-change: backdrop-filter;
+    transform: translateZ(0);
+    position: relative;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 10vh;
+    flex-direction: column;
+    height: 15.5vh;
     font-size: 9vh;
     width: 95vw;
 }
 .header > div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: none;
 }
 .title {
   margin: 0 auto;
   text-align: center;
   height: inherit;
+  z-index: 500;
+  
 }
 .profileHolder {
   display: flex;
@@ -150,20 +168,18 @@ body {
   border-radius: 50%;
   border: 1px solid black;
 }
-.filterIcon:hover {
-  background-color: lightgrey;
-}
 
 .filterArea {
+    height:5vh;
+    width: 95vw;
     display: flex;
     flex-wrap: nowrap; 
-    justify-content: flex-start; 
-    align-items: center;
+    justify-content: center; 
+    align-items: flex-end;
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
-    height: 100%;
-    padding: 0 1vw 0 1vw;
+    /*padding: 0 1vw 0 1vw;*/
 }
 .filterArea::-webkit-scrollbar {
     height: 0.5vh;
@@ -185,47 +201,68 @@ body {
 /* Classes Grid */
 .class-grid {
   /* top | right | bottom | left */
-    height: 85vh;
-    padding: 2.5vh;
+    position: absolute;
+    top: 0vh;
+    padding: 2.5vw;
+    padding-top: 18.5vh;
     display: grid;
-    grid-template-columns: 35.3vh 35.3vh 35.3vh 35.3vh;
-    column-gap: 0;
+    grid-template-columns: 20vw 20vw 20vw 20vw;
+    column-gap: 3.3vw;
     row-gap: 2vh;
-    height: 95vh;
+    height: 100vh;
     width: 95vw;
-    border: 2px solid black;
-    overflow-x: scroll;
+    overflow-x: hidden;
     overflow-y: scroll;
+}
+
+.class-grid::-webkit-scrollbar {
+    width: 0.5vw;
+}
+
+.class-grid::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.class-grid::-webkit-scrollbar-track {
+    background: transparent;
 }
 
 
 .sidebar:hover {
-  background-color: #165766;
+  /*background-color: #165766;*/
   width: 17.5vw;
+  box-shadow: 0 0 5vh rgba(0, 0, 0, 0.2);
 }
 .classHeader {
-  width: 27.3vh;
+  width: 18vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: black;
 }
+
 .classHeader > span {
-  width: 5vh;
+  width: 5vw;
+  text-align: center;
 }
 .classIcon {
-  height: 5vh;
-  width: 5vh;
+  height: 5vw;
+  width: 5vw;
+  text-align: center;
 }
 .className {
-  width: 17.3vh
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 150%;
+  font-size: 1.5vw;
   cursor: pointer;
   font-weight: bold;
   text-align: center;
+  transition: transform 0.25s ease;
 }
+
 .classRate {
   margin-top: 1vh;
   padding: 0 1vh 0 1vh;
@@ -233,10 +270,11 @@ body {
   align-items: center;
   justify-content: space-between;
   height: 6vh;
-  width: 27.3vh;
+  width: 18vw;
   border: 1px solid black;
   border-radius: 2vh;
   backdrop-filter: saturate(80%);
+  color: black;
 }
 .classDes {
   padding: 1%;
@@ -247,72 +285,157 @@ body {
   text-align: center;
   height: auto;
   font-size: auto;
+  color: black;
   
 }
 .classCard {
   border: 3px solid black;
   height: min-content;
-  width: 30.3vh;
-  padding: 1vh;
+  width: fit-content;
+  padding: 1vh 1vw 1vh 1vw;
   cursor: default;
   border-radius: 2vh;
+  transition: box-shadow 0.2s ease, transform 0.1s ease;
+  
 }
-
+.classCard:hover {
+  box-shadow: 0 0 2vh currentColor;
+  transform: rotate(0.2deg) scale(1.05);
+}
+span {
+  user-select: none;
+}
 .history {
   background: #81A489;
+  color: #81A489;
 }
 .english {
   background: #F2A054;
+  color: #F2A054;
 }
 .math {
   background: #F1D8B5;
+  color: #F1D8B5;
 }
 .arts {
   background: #C04D31;
+  color: #C04D31;
 }
 .science {
   background: #8043AD;
+  color: #8043AD;
 }
 .music {
   background: #42A6A9;
+  color:#42A6A9;
 }
-/* Class page */
+.closeMenu {
+  z-index: 901;
+  opacity: 0;
+  transform: rotate(90deg);
+  transition: opacity 0.25s ease, transform 0.5s ease;
+}
+.openMenu {
+  z-index: 902;
+  transition: opacity 0.25s ease, transform 0.5s ease;
+}
 
-#course-title{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@media (hover: none) {
+  .sidebarItem:hover {
+  background-color: initial;
+  font-size: initial;
+  }
+  .sidebar:hover {
+    width: initial;
+  }
+.classCard:hover {
+  box-shadow: initial;
+  transform: initial;
 }
-.wrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: baseline; /* NEW */
+.sidebar:hover {
+  /*background-color: #165766;*/
+  width: 5vw;
+  box-shadow: initial;
 }
-.tags {
-  background-color: #ddd;
-  padding: 5px;
+.mode {
+  display: none;
 }
-.stars,
-.rating-distribution,
-.course-description,
-.prerequisites {
-  border-top: 1px solid #000;
-  padding-top: 10px;
-  margin-top: 10px;
+
 }
-.rating-distribution span,
-.prerequisites span {
-  font-weight: bold;
-}
-.header1 {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 10vh;
-  font-size: 9vh;
-  width: 95vw;
-}
-.department {
-  background-color:#ffffff;
-  padding: None
+
+@media (max-width:768px) {
+  .header {
+    width: 100vw;
+    left: 0vh;
+    height: 16vh;
+  }
+  .class-grid {
+    /* top | right | bottom | left */
+    position: absolute;
+    top: 0vh;
+    padding-left: 6.6vw;
+    column-gap: 6.6vw;
+    padding-top: 18.5vh;
+    grid-template-columns: 40vw 40vw;
+    height: 100vh;
+    width: 100vw;
+  } 
+  .classHeader {
+    width: 38vw;
+  }
+  .className {
+    width: 27vw;
+    font-size: 1.75vh;
+  }
+  .classRate {
+    height: 6vh;
+    width: 38vw;
+  }
+  .mode {
+    display: none;
+  }
+  .sidebar {
+    width: 40vw;
+    transform: translateX(-40vw);
+    box-shadow: 0 0 5vh rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease;
+  }
+  .sidebarItem {
+    font-size: 3vh;
+  }
+  .menuPic {
+    height: 6vh;
+    width: 6vh;
+  }
+  .main-content {
+    width: 100vw;
+    left: 0vw;
+  }
+  .title {
+    margin: auto;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin-left: auto;
+    text-align: center;
+  }
+  .filterArea {
+    width: 100vw;
+    height: 5.5vh;
+  }
+  .menuMobile {
+    display: flex;
+    position: absolute;
+    height: 6vh;
+    width: 6vh;
+    margin-top: 2vh;
+    margin-left: 0.5vw;
+    margin-right: 1vw;
+  }
+  .home {
+    display: none;
+  }
+  .mobileClose {
+    display: flex;
+  }
 }

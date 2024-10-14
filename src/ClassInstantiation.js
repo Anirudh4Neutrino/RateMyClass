@@ -1,327 +1,752 @@
-const creativeWriting = new Course(
-    false, // dualCredit
-    "Creative Writing (ENG221)",
-    "11-12",
-    "None",
-    "Semester",
+const algebra2 = new Class(
+    false,
+    "math",
+    "10-11",
+    "Algebra 1",
+    "Year",
     "none",
-    "A course focusing on creative writing techniques and styles.",
-    "B+",
-    [4.2, 4.0, 4.5], // ratings
-    ["Interesting and fun!", "Loved the writing prompts!"], // comments
-    3 // averageTimePerWeek
-);
-
-const apEnglishLiterature = new Course(
-    true, // dualCredit
-    "AP English Literature & Composition (Lit 101 & 185)",
-    "11-12",
-    "None",
-    "Full-Year",
-    "AP",
-    "Advanced placement course in English literature and composition.",
-    "A",
-    [5.0, 4.8, 4.9], // ratings
-    ["Challenging but rewarding.", "Excellent preparation for college."], // comments
-    6 // averageTimePerWeek
-);
-
-const apEnglishLanguage = new Course(
-    true, // dualCredit
-    "AP English Language & Composition (ENG 105 & 106)",
-    "11-12",
-    "None",
-    "Full-Year",
-    "AP",
-    "Advanced placement course focusing on English language and composition.",
-    "A",
-    [4.7, 4.9, 4.8], // ratings
-    ["Engaging and informative.", "Great for developing writing skills."], // comments
-    5 // averageTimePerWeek
-);
-
-const worldLiterature = new Course(
-    false, // dualCredit
-    "World Literature 2 (LIT 151)",
-    "11-12",
-    "None",
-    "Semester",
-    "none",
-    "An exploration of world literature from various cultures and time periods.",
+    "Covers advanced algebraic concepts including functions, polynomials, and quadratic equations.",
     "B",
-    [3.8, 4.0, 3.9], // ratings
-    ["Good diversity of texts.", "Interesting perspectives on global literature."], // comments
-    3 // averageTimePerWeek
+    [4.0, 3.5, 3.8],
+    ["Challenging but worth it.", "Helped me understand math better."],
+    4,
+    "calculate",
+    "Algebra 2"
 );
 
-// 9th Grade Courses
-const english9Workshop = new Course(
+const worldHistory = new Class(
     false,
-    "English 9 Workshop",
-    "9th",
+    "history",
+    "9-10",
     "None",
-    "Fall Semester",
-    "none",
-    "A workshop course focused on writing skills for 9th graders.",
+    "Year",
+    "honors",
+    "Explores world civilizations, major historical events, and their influence on the modern world.",
     "B+",
-    [4.0, 4.2],
-    ["Great for developing writing skills.", "Helpful feedback from teacher."],
-    3
+    [4.2, 3.9, 4.0],
+    ["Fascinating class!", "A lot of reading but very informative."],
+    5,
+    "public",
+    "World History"
 );
 
-const english9Literature = new Course(
+const choir = new Class(
     false,
-    "English 9 Literature",
-    "9th",
+    "music",
+    "9-12",
     "None",
-    "Spring Semester",
+    "Year",
     "none",
-    "A literature course exploring a variety of texts.",
-    "B",
-    [3.8, 4.0],
-    ["Interesting reads.", "Good discussion in class."],
-    3
+    "Students will learn vocal techniques and perform a variety of choral works.",
+    "A-",
+    [4.5, 4.3],
+    ["Loved performing in concerts!", "Great for improving vocal skills."],
+    3,
+    "music_note",
+    "Choir"
 );
 
-// 10th Grade Courses
-const americanLiterature = new Course(
+const chemistry = new Class(
     false,
-    "American Literature",
-    "10th",
-    "None",
-    "Full Year",
-    "none",
-    "A comprehensive course covering American literature.",
-    "B+",
-    [4.1, 4.3],
-    ["Broad range of authors.", "Engaging class discussions."],
-    4
+    "science",
+    "10-12",
+    "Biology",
+    "Year",
+    "AP",
+    "Focuses on chemical reactions, atomic structure, and the properties of matter.",
+    "B-",
+    [3.8, 4.0, 3.7],
+    ["Labs were fun!", "Hard concepts but rewarding."],
+    6,
+    "science",
+    "Chemistry"
 );
 
-const basicComposition = new Course(
+const painting = new Class(
     false,
-    "Basic Composition",
-    "10th",
+    "arts",
+    "9-12",
     "None",
     "Either Semester",
     "none",
-    "A course focused on fundamental writing skills.",
+    "An introduction to painting techniques, color theory, and artistic styles.",
+    "A",
+    [4.6, 4.4],
+    ["A relaxing and creative class.", "Helped me improve my artistic skills."],
+    2,
+    "palette",
+    "Painting"
+);
+
+const calculus = new Class(
+    true,
+    "math",
+    "11-12",
+    "Pre-Calculus",
+    "Year",
+    "AP",
+    "Covers limits, derivatives, integrals, and their applications.",
+    "B",
+    [4.1, 3.9],
+    ["A tough class, but very rewarding.", "You really need to study!"],
+    6,
+    "functions",
+    "AP Calculus"
+);
+
+const biology = new Class(
+    false,
+    "science",
+    "9-10",
+    "None",
+    "Year",
+    "none",
+    "Introduction to biology, including cell biology, genetics, and ecology.",
+    "B",
+    [4.0, 3.7],
+    ["Interesting labs and experiments.", "A bit challenging but fun."],
+    5,
+    "biotech",
+    "Biology"
+);
+
+const creativeWriting = new Class(
+    false,
+    "english",
+    "10-12",
+    "None",
+    "Either Semester",
+    "none",
+    "Focuses on developing creative writing skills in fiction, poetry, and non-fiction.",
+    "A-",
+    [4.4, 4.5],
+    ["Loved expressing my ideas through writing.", "Great feedback from the teacher."],
+    3,
+    "edit",
+    "Creative Writing"
+);
+
+const orchestra = new Class(
+    false,
+    "music",
+    "9-12",
+    "Audition or Teacher Approval",
+    "Year",
+    "none",
+    "Students perform in an ensemble playing orchestral instruments like strings, woodwinds, and brass.",
+    "A",
+    [4.8, 4.5],
+    ["Performing was a great experience!", "We learned a lot about music theory."],
+    4,
+    "queue_music",
+    "Orchestra"
+);
+
+const physics = new Class(
+    false,
+    "science",
+    "11-12",
+    "Algebra 2",
+    "Year",
+    "honors",
+    "Study of the fundamental laws of physics including motion, forces, and energy.",
+    "B-",
+    [3.8, 3.9],
+    ["Tough but really cool when you understand it.", "Loved the hands-on experiments."],
+    5,
+    "bolt",
+    "Physics"
+);
+
+const drama = new Class(
+    false,
+    "arts",
+    "9-12",
+    "None",
+    "Either Semester",
+    "none",
+    "Students will learn acting techniques, stagecraft, and theater production.",
+    "A-",
+    [4.6, 4.4],
+    ["Performing in plays was an amazing experience.", "Boosted my confidence."],
+    3,
+    "theater_comedy",
+    "Drama"
+);
+
+const americanLit = new Class(
+    false,
+    "english",
+    "11",
+    "None",
+    "Year",
+    "honors",
+    "Covers American literature from colonial times to the modern era, with analysis of major texts.",
+    "B+",
+    [4.1, 4.0],
+    ["Interesting texts, lots of essays.", "Enjoyed the discussions."],
+    4,
+    "book",
+    "American Literature"
+);
+
+const geometry = new Class(
+    false,
+    "math",
+    "9-10",
+    "Algebra 1",
+    "Year",
+    "none",
+    "Study of shapes, angles, theorems, and proofs in a mathematical context.",
+    "B",
+    [4.0, 3.9],
+    ["A bit tricky with proofs, but useful.", "Helps with spatial reasoning."],
+    4,
+    "square_foot",
+    "Geometry"
+);
+
+const musicTheory = new Class(
+    false,
+    "music",
+    "10-12",
+    "None",
+    "Year",
+    "AP",
+    "Explores the theoretical foundations of music, including scales, chords, and harmony.",
+    "A",
+    [4.7, 4.6],
+    ["Perfect for learning the language of music.", "A great challenge for musicians."],
+    4,
+    "music_note",
+    "AP Music Theory"
+);
+
+const earthScience = new Class(
+    false,
+    "science",
+    "9-10",
+    "None",
+    "Year",
+    "none",
+    "Covers geology, meteorology, oceanography, and astronomy in a general science curriculum.",
     "B",
     [3.9, 4.0],
-    ["Practical writing exercises.", "Helpful for improving writing."],
-    3
+    ["Loved learning about the Earth!", "Field trips were great."],
+    3,
+    "terrain",
+    "Earth Science"
 );
 
-
-const introToJournalism10 = new Course(
+const photography = new Class(
     false,
-    "Intro. to Journalism",
-    "10th",
-    "None",
-    "Either Semester",
-    "none",
-    "An introduction to the basics of journalism.",
-    "B",
-    [3.7, 3.9],
-    ["Informative course.", "Great for aspiring journalists."],
-    2
-);
-
-const mythologyFantasyFolklore = new Course(
-    false,
-    "Mythology, Fantasy, Folklore",
-    "10th",
-    "None",
-    "Either Semester",
-    "none",
-    "A course exploring myths, fantasy literature, and folklore.",
-    "B",
-    [3.8, 4.1],
-    ["Fascinating topics.", "Great storytelling."],
-    3
-);
-
-const surveyLiterature10 = new Course(
-    false,
-    "Survey of Literature (10th)",
-    "10th",
-    "None",
-    "Either Semester",
-    "none",
-    "An exploration of various literary texts for 10th graders.",
-    "B+",
-    [4.0, 4.2],
-    ["Diverse reading list.", "Thought-provoking discussions."],
-    3
-);
-
-// 11th & 12th Grade Courses
-const speech = new Course(
-    false,
-    "Speech",
-    "11-12",
-    "None",
-    "Either Semester",
-    "none",
-    "A course focused on developing public speaking skills.",
-    "B+",
-    [4.0, 4.1],
-    ["Improved my speaking confidence.", "Useful for presentations."],
-    3
-);
-
-const multimediaComposition = new Course(
-    false,
-    "Multimedia Composition",
-    "11-12",
-    "None",
-    "Either Semester",
-    "none",
-    "A course integrating multimedia into writing projects.",
-    "B+",
-    [4.2, 4.4],
-    ["Engaging assignments.", "Great use of technology."],
-    4
-);
-
-const introToJournalism1112 = new Course(
-    false,
-    "Intro. to Journalism",
-    "11-12",
-    "None",
-    "Either Semester",
-    "none",
-    "An introduction to the basics of journalism.",
-    "B",
-    [3.7, 3.9],
-    ["Informative course.", "Great for aspiring journalists."],
-    2
-);
-
-const activismSocialJustice = new Course(
-    false,
-    "Activism & Social Justice Literature",
-    "11-12",
-    "None",
-    "Either Semester",
-    "none",
-    "A literature course examining themes of activism and social justice.",
-    "B+",
-    [4.0, 4.2],
-    ["Thought-provoking texts.", "Great for discussions on social issues."],
-    3
-);
-
-const horrorLiterature = new Course(
-    false,
-    "Horror Literature",
-    "11-12",
-    "None",
-    "Either Semester",
-    "none",
-    "A course exploring the genre of horror literature.",
-    "B",
-    [3.8, 4.0],
-    ["Spooky and fun.", "Great variety of horror stories."],
-    3
-);
-
-const scienceFictionLiterature = new Course(
-    false,
-    "Science-Fiction Literature",
-    "11-12",
-    "None",
-    "Either Semester",
-    "none",
-    "A course exploring science fiction literature.",
-    "B+",
-    [4.1, 4.3],
-    ["Interesting futuristic themes.", "Thought-provoking stories."],
-    3
-);
-
-const shakespeare = new Course(
-    false,
-    "Shakespeare",
-    "11-12",
-    "None",
-    "Either Semester",
-    "none",
-    "A course focused on the works of William Shakespeare.",
-    "A-",
-    [4.3, 4.5],
-    ["Deep dive into Shakespeare.", "Great analysis of plays."],
-    4
-);
-
-// 12th Grade Only Courses
-const surveyLiterature12 = new Course(
-    false,
-    "Survey of Literature (12th)",
-    "12th",
-    "None",
-    "Either Semester",
-    "none",
-    "An exploration of various literary texts for 12th graders.",
-    "B+",
-    [4.0, 4.2],
-    ["Diverse reading list.", "Thought-provoking discussions."],
-    3
-);
-
-const litSociologyResistance = new Course(
-    false,
-    "Lit & Sociology of Resistance Movements",
-    "12th",
-    "None",
-    "2nd Semester",
-    "none",
-    "A course examining literature and sociology of resistance movements.",
-    "B+",
-    [4.0, 4.1],
-    ["Insightful topics.", "Great discussions on resistance movements."],
-    3
-);
-
-// Electives
-const drama = new Course(
-    false,
-    "Drama",
+    "arts",
     "9-12",
     "None",
     "Either Semester",
     "none",
-    "A course focused on the art of drama and theater.",
+    "An introduction to photography, including composition, lighting, and digital editing.",
+    "A",
+    [4.5, 4.6],
+    ["Really fun and creative class.", "Learned how to take great photos!"],
+    2,
+    "camera_alt",
+    "Photography"
+);
+
+const usHistory = new Class(
+    false,
+    "history",
+    "11",
+    "None",
+    "Year",
+    "AP",
+    "Covers key events, figures, and movements in American history from colonization to the modern day.",
+    "B+",
+    [4.2, 4.1],
+    ["So much to learn, but really interesting!", "The exams were tough but fair."],
+    6,
+    "flag",
+    "AP US History"
+);
+
+const economics = new Class(
+    true,
+    "history",
+    "11-12",
+    "None",
+    "Semester",
+    "none",
+    "Introduction to basic economic principles, including supply and demand, markets, and financial systems.",
+    "B",
+    [4.0, 4.1],
+    ["Useful class for understanding finances.", "The projects were fun and practical."],
+    4,
+    "savings",
+    "Economics"
+);
+
+const journalism = new Class(
+    false,
+    "english",
+    "10-12",
+    "None",
+    "Year",
+    "none",
+    "Covers writing, editing, and publishing news articles, including ethics in journalism.",
+    "A-",
+    [4.5, 4.3],
+    ["Loved working on the school paper!", "Helped me improve my writing skills."],
+    3,
+    "article",
+    "Journalism"
+);
+
+const environmentalScience = new Class(
+    false,
+    "science",
+    "11-12",
+    "Biology",
+    "Year",
+    "AP",
+    "Focuses on the interrelationships between living organisms and their environment, including human impacts.",
+    "B+",
+    [4.1, 4.2],
+    ["Really opened my eyes to environmental issues.", "We had great projects on sustainability."],
+    5,
+    "eco",
+    "AP Environmental Science"
+);
+
+const sculpture = new Class(
+    false,
+    "arts",
+    "9-12",
+    "None",
+    "Either Semester",
+    "none",
+    "Students will explore three-dimensional art by creating sculptures using various materials.",
+    "A",
+    [4.7, 4.5],
+    ["Loved working with my hands.", "A great creative outlet."],
+    3,
+    "emoji_objects",
+    "Sculpture"
+);
+
+const spanish1 = new Class(
+    false,
+    "english",
+    "9-12",
+    "None",
+    "Year",
+    "none",
+    "An introduction to the Spanish language, focusing on vocabulary, grammar, and basic conversation.",
+    "A-",
+    [4.3, 4.1],
+    ["Fun class, learned a lot of new words.", "Great for beginners."],
+    4,
+    "language",
+    "Spanish 1"
+);
+
+const worldGeo = new Class(
+    false,
+    "history",
+    "9-10",
+    "None",
+    "Year",
+    "none",
+    "Covers the physical and human geography of the world, including maps, regions, and global issues.",
+    "B",
+    [4.0, 3.9],
+    ["Interesting to learn about different cultures.", "Lots of map work but very informative."],
+    4,
+    "public",
+    "World Geography"
+);
+
+const health = new Class(
+    false,
+    "science",
+    "9-12",
+    "None",
+    "Semester",
+    "none",
+    "Covers personal health, nutrition, mental health, and lifestyle choices for well-being.",
+    "B+",
+    [4.1, 4.2],
+    ["Helpful class, learned about healthy living.", "We had good discussions."],
+    2,
+    "fitness_center",
+    "Health"
+);
+
+const psychology = new Class(
+    true,
+    "science",
+    "11-12",
+    "None",
+    "Semester",
+    "AP",
+    "Introduction to psychological theories, concepts, and methods, including mental processes and behavior.",
     "B+",
     [4.2, 4.3],
-    ["Fun and creative.", "Great for building confidence."],
-    3
-);
-// Electives continued
-const advancedJournalismWeb = new Course(
-    false,
-    "Advanced Journalism (The Web)",
-    "9-12",
-    "Intro. to Journalism",
-    "Either Semester",
-    "none",
-    "An advanced course focusing on digital journalism and web-based reporting.",
-    "A-",
-    [4.2, 4.4],
-    ["Great for learning digital journalism.", "Engaging and informative projects."],
-    3
+    ["Really interesting, learned a lot about the mind.", "A bit of reading but fascinating."],
+    5,
+    "psychology",
+    "AP Psychology"
 );
 
-const spiritYearbook = new Course(
+const band = new Class(
     false,
-    "SPIRIT (AHS Yearbook)",
+    "music",
     "9-12",
-    "Intro. to Journalism",
-    "Either Semester",
+    "None",
+    "Year",
     "none",
-    "A hands-on course focused on creating the school yearbook.",
-    "A-",
-    [4.3, 4.5],
-    ["Fun and creative.", "Great for teamwork and project management."],
-    3
+    "Students perform in a large ensemble playing wind, brass, and percussion instruments.",
+    "A",
+    [4.7, 4.5],
+    ["Loved playing in the band!", "Great way to improve on my instrument."],
+    4,
+    "music_video",
+    "Band"
 );
+
+const apPhysics = new Class(
+    true,
+    "science",
+    "12",
+    "Physics",
+    "Year",
+    "AP",
+    "A rigorous study of physics including advanced topics like electromagnetism and quantum mechanics.",
+    "C+",
+    [2.5, 2.8, 2.2],
+    ["Absolutely brutal.", "Unless you want to suffer, don't take this.", "Worst decision of my life."],
+    10,
+    "science",
+    "AP Physics"
+);
+
+const fashionDesign = new Class(
+    false,
+    "arts",
+    "9-12",
+    "None",
+    "Semester",
+    "none",
+    "An introduction to the fundamentals of fashion design, including sketching, textiles, and trends.",
+    "A",
+    [4.7, 4.8, 4.9],
+    ["Loved every second of it!", "Super fun and creative.", "Great if you're interested in fashion."],
+    3,
+    "design_services",
+    "Fashion Design"
+);
+
+const apArtHistory = new Class(
+    true,
+    "arts",
+    "11-12",
+    "None",
+    "Year",
+    "AP",
+    "A survey of art from ancient to modern times, focusing on historical context and artistic movements.",
+    "B",
+    [3.5, 2.9, 3.0],
+    ["So much memorization. Why did I take this?", "If you enjoy art, this is okay, but it's a slog.", "Too much work for what it's worth."],
+    6,
+    "brush",
+    "AP Art History"
+);
+
+const apEnglishLit = new Class(
+    true,
+    "english",
+    "12",
+    "None",
+    "Year",
+    "AP",
+    "An advanced study of literary works, including poetry, prose, and drama, with a focus on analysis.",
+    "B-",
+    [3.0, 2.8, 2.9],
+    ["I thought I loved reading until this class.", "Prepare for endless essays and stress.", "This class drained my soul."],
+    8,
+    "menu_book",
+    "AP English Literature"
+);
+
+const robotics = new Class(
+    false,
+    "science",
+    "10-12",
+    "Algebra 1",
+    "Year",
+    "none",
+    "An introduction to robotics, covering basic programming, mechanical design, and teamwork.",
+    "A-",
+    [4.2, 4.5, 4.3],
+    ["Really fun if you like building stuff.", "We actually got to build and program robots!", "Challenging but rewarding."],
+    5,
+    "settings",
+    "Robotics"
+);
+
+const apWorldHistory = new Class(
+    true,
+    "history",
+    "10-12",
+    "None",
+    "Year",
+    "AP",
+    "A global survey of history from the ancient world to modern times, with an emphasis on critical thinking.",
+    "C+",
+    [2.8, 2.5, 3.0],
+    ["Too much reading, way too fast.", "The tests are brutal. I wouldn't recommend it.", "Just don't. Save yourself."],
+    9,
+    "history_edu",
+    "AP World History"
+);
+
+const culinaryArts = new Class(
+    false,
+    "arts",
+    "9-12",
+    "None",
+    "Semester",
+    "none",
+    "Teaches the basics of cooking, kitchen safety, and culinary techniques with hands-on experience.",
+    "A",
+    [4.9, 4.7, 4.8],
+    ["Tons of fun! Learned how to cook amazing food.", "This class is a blast if you love cooking.", "Great class with delicious results."],
+    2,
+    "restaurant",
+    "Culinary Arts"
+);
+
+const creativeCoding = new Class(
+    false,
+    "math",
+    "10-12",
+    "Algebra 1",
+    "Semester",
+    "none",
+    "Introduces the fundamentals of coding with an emphasis on creativity and game development.",
+    "B+",
+    [3.8, 4.0, 3.9],
+    ["Challenging but really cool projects.", "If you like coding, this is fun!", "I made my own game!"],
+    4,
+    "code",
+    "Creative Coding"
+);
+
+const apChemistry = new Class(
+    true,
+    "science",
+    "11-12",
+    "Chemistry",
+    "Year",
+    "AP",
+    "An in-depth study of chemistry topics such as thermodynamics, kinetics, and chemical equilibrium.",
+    "C",
+    [2.7, 2.9, 3.1],
+    ["Impossible unless you’re a genius.", "I'm still traumatized by the labs.", "Be prepared to cry over chemistry homework."],
+    10,
+    "science",
+    "AP Chemistry"
+);
+
+const sociology = new Class(
+    false,
+    "history",
+    "11-12",
+    "None",
+    "Semester",
+    "none",
+    "Examines human societies, their structures, and the influence of culture and institutions on individuals.",
+    "B",
+    [3.5, 3.2, 3.7],
+    ["Interesting but a bit dry.", "The discussions were eye-opening.", "Learned some useful things, but not my favorite."],
+    4,
+    "people",
+    "Sociology"
+);
+
+const introToLaw = new Class(
+    false,
+    "history",
+    "11-12",
+    "None",
+    "Semester",
+    "none",
+    "Introduces students to the American legal system, including civil, criminal, and constitutional law.",
+    "B+",
+    [4.0, 3.9, 4.1],
+    ["Really interesting! I learned a lot about law.", "Good prep if you're considering law school.", "A bit of reading, but overall great."],
+    5,
+    "gavel",
+    "Introduction to Law"
+);
+
+const woodworking = new Class(
+    false,
+    "arts",
+    "9-12",
+    "None",
+    "Semester",
+    "none",
+    "Covers the basics of woodworking, including safety, tool use, and project design.",
+    "A",
+    [4.5, 4.8, 4.6],
+    ["Loved working with my hands.", "Built some awesome projects.", "Super satisfying and useful skills."],
+    3,
+    "handyman",
+    "Woodworking"
+);
+
+const digitalMedia = new Class(
+    false,
+    "arts",
+    "9-12",
+    "None",
+    "Semester",
+    "none",
+    "Explores digital media production, including video editing, graphic design, and animation.",
+    "A-",
+    [4.3, 4.2, 4.1],
+    ["Creative and fun! Made some cool videos.", "Great for anyone interested in media.", "A bit technical, but rewarding."],
+    4,
+    "movie_creation",
+    "Digital Media"
+);
+
+const introToBusiness = new Class(
+    false,
+    "history",
+    "10-12",
+    "None",
+    "Semester",
+    "none",
+    "Covers the basics of business, including entrepreneurship, marketing, and financial management.",
+    "B+",
+    [4.0, 3.8, 3.9],
+    ["Good intro to business concepts.", "Useful if you want to start a business.", "Not too hard, but you need to pay attention."],
+    4,
+    "business_center",
+    "Introduction to Business"
+);
+
+const apMacroEconomics = new Class(
+    true,
+    "history",
+    "11-12",
+    "None",
+    "Semester",
+    "AP",
+    "Covers macroeconomic concepts such as inflation, unemployment, and global trade policies.",
+    "C+",
+    [2.5, 2.8, 2.7],
+    ["Horrible. I barely passed.", "Too much theory and not enough real-world examples.", "Just confusing all around."],
+    8,
+    "trending_up",
+    "AP Macroeconomics"
+);
+
+const introToPsych = new Class(
+    false,
+    "science",
+    "10-12",
+    "None",
+    "Semester",
+    "none",
+    "An introduction to the field of psychology, focusing on behavior, mental processes, and development.",
+    "B+",
+    [3.8, 4.0, 3.7],
+    ["Super interesting! Loved the topics.", "A bit of reading but nothing too bad.", "Learned a lot about the human mind."],
+    5,
+    "psychology",
+    "Introduction to Psychology"
+);
+
+const journalism2 = new Class(
+    false,
+    "english",
+    "11-12",
+    "Journalism",
+    "Year",
+    "none",
+    "Advanced study in journalism, focusing on investigative reporting, feature writing, and publishing.",
+    "B",
+    [4.1, 3.9, 4.0],
+    ["Great for students who enjoy writing.", "Lots of real-world projects.", "Challenging but worth it."],
+    6,
+    "article",
+    "Journalism 2"
+);
+
+const graphicDesign = new Class(
+    false,
+    "arts",
+    "9-12",
+    "None",
+    "Semester",
+    "none",
+    "GRAPHIC DESIGN IS MY PASSION RAHHHHHHH",
+    "A+",
+    [5, 4.9, 5],
+    ["R/Graphic design is a lifesaver", "I love this class", "Vert Demeure, Very mindful"],
+    2,
+    "brush",
+    "Graphic Design"
+    );
+
+
+
+const courses = [
+    algebra2,
+    worldHistory,
+    choir,
+    chemistry,
+    painting,
+    calculus,
+    biology,
+    creativeWriting,
+    orchestra,
+    physics,
+    drama,
+    americanLit,
+    geometry,
+    musicTheory,
+    earthScience,
+    photography,
+    usHistory,
+    economics,
+    journalism,
+    environmentalScience,
+    sculpture,
+    spanish1,
+    worldGeo,
+    health,
+    psychology,
+    band,
+    apPhysics,
+    fashionDesign,
+    apArtHistory,
+    apEnglishLit,
+    robotics,
+    apWorldHistory,
+    culinaryArts,
+    creativeCoding,
+    apChemistry,
+    sociology,
+    introToLaw,
+    woodworking,
+    digitalMedia,
+    introToBusiness,
+    apMacroEconomics,
+    introToPsych,
+    journalism2,
+    graphicDesign
+    ];
