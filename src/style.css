@@ -67,7 +67,7 @@ body {
   transition: font-size 0.15s ease, background-color 0.15s ease;
   cursor: pointer;
 }
-@media (max-width:769) {
+
 .sidebarItem:hover {
  /* background: #185c6b;*/
   background-color: rgba(0, 0, 0, 0.1);
@@ -77,12 +77,12 @@ body {
   height: 4.1vw;
   width: 4.1vw;
 }
-}
+
 
 .mode {
   position: absolute;
-  float: right;
-  margin-left: 30vw;
+  z-index: 999;
+  left: 90vw;
   margin-top: 1.5vh;
   padding: 0.5%;
   border-radius: 25%;
@@ -94,12 +94,12 @@ body {
   transition: opacity 0.75s ease;
   opacity: 0;
 }
-@media (max-width:769) {
+
 .mode:hover {
   background-color: rgba(0, 0, 0, 0.1);
   /*transform: scale(1.15,1.15);*/
 }
-}
+
 .menuPic {
   height: 4vw;
   width: 4vw;
@@ -240,13 +240,13 @@ body {
     background: transparent;
 }
 
-@media (max-width:769) {
+
 .sidebar:hover {
   /*background-color: #165766;*/
   width: 17.5vw;
   box-shadow: 0 0 5vh rgba(0, 0, 0, 0.2);
 }
-}
+
 .classHeader {
   width: 18vw;
   display: flex;
@@ -427,9 +427,6 @@ span {
   .classRate {
     height: 6vh;
     width: 38vw;
-  }
-  .mode {
-    margin-left:85vw;
   }
   .sidebar {
     width: 40vw;
