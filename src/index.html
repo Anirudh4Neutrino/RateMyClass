@@ -36,103 +36,7 @@
   </script>
 
     <style>
-/* Popup Menu styling */
-.popup-menu {
-    position: fixed;
-    display: none;
-    top: 50%;
-    left: 50%;
-    width: 60vw;
-    height: 60vh;
-    background-color: white;
-    transform: translate(-50%, -50%);
-    z-index: 999;
-    grid-template-areas: 
-    "icon title title close"
-    "teach teach credit credit"
-    "star star star star"
-    "desc desc desc desc"
-    "back more more next";
-    overflow: hidden;
-    column-gap: 0;
-    opacity: 0;
-}
-/* Show the popup */
-.popup-menu.show {
-    display: grid;
-    opacity: 1;
-}
 
-
-/* Overlay to darken background */
-.popup-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 998;
-}
-
-/* Show the overlay */
-.popup-overlay.show {
-    display: block;
-}
-
-.popup-menu > div {
-    border: 1px solid black;
-    height: 12vh;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-      }
-      
-.icon {
-  grid-area: icon;
-  width: 15vw;
-}
-.title {
-  grid-area: title;
-  width: 30vw;
-}
-.teacher {
-  grid-area: teach;
-  width: 30vw;
-}
-.credit {
-  grid-area: credit;
-  width: 30vw;
-}
-.star {
-  grid-area: star;
-  width: 60vw;
-}
-.desc {
-  grid-area: desc;
-  width: 60vw;
-}
-.back {
-  grid-area: back;
-  width: 15vw;
-}
-.more {
-  grid-area: more;
-  width: 30vw;
-}
-.next {
-  grid-area: next;
-  width: 15vw;
-}
-:root {
-  --md-assist-chip-container-shape: 0px;
-  --md-assist-chip-label-text-font: system-ui;
-  --md-sys-color-outline: #6F7979;
-  --md-sys-color-on-surface: black;
-  --md-filter-chip-selected-container-color: rgba(28, 109, 128, 0.5);
-}
 md-filter-chip {
     background-color: white;
   }
@@ -142,57 +46,70 @@ md-filter-chip {
 .material-symbols-rounded {
   font-variation-settings:
   'FILL' 1,
-  'wght' 400,
-  'GRAD' 0,
+  'wght' 500,
+  'GRAD' 200,
   'opsz' 48;
-  font-size: 4vh;
+  /*font-size: 4vh;*/
+  transition: font-variation-settings 0.5s ease;
 }
- @media (max-width:768px) {
+.unfilled {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 500,
+  'GRAD' -25,
+  'opsz' 48;
+  font-size: 50vh;
+}
+@media (max-width:768px) {
   .material-symbols-rounded {
   font-size: 3vh;
 }
+}
+.codePic {
+  height: 4vw;
+  margin-left: 0.5vw;
+  top: 92vh;
+  position: absolute;
+}
+md-filter-chip {
+  transition: background-color 1.5s ease;
+}
+md-sys-color {
+  transition: outline-color 1.5s ease;
 }
 </style>
 
 </head>
 
-<body onload="load();doshit()">
+<body onload="load();doshit()" style="background-color: var(--light-bg)" id="body">
     <div class="container" id="fullHeightDiv">
       <img src="menuIcon.png" class="menuMobile openMenu" id="lines" onclick="openClose(true)">
           <img src="closeIcon.png" class="menuMobile closeMenu" id="exes" onclick="openClose(false)">
-        <div class="sidebar" id="sidebar">
+        <div class="sidebar" id="sidebar" style="background-color: var(--light-mode-bg)">
           <div class="sidebarItem mobileClose" onclick="openClose(false)" id="mobileClose" style="padding-left: calc(6vh + 1vw + 0.5vw)">
             Close
           </div>
           <div class="sidebarItem home">
-            <img src="homeIcon.png" class="menuPic">Home
+            <img src="homeIconFill.png" class="menuPic">Home
           </div>
-          <div class="sidebarItem">
-            <img src="form.png" class="menuPic">Contribute
+          <div class="sidebarItem home">
+            <img src="accountIconFill.png" class="menuPic">Account
           </div>
-          <div class="sidebarItem" onclick="window.open('https://docs.google.com/document/d/1iLO7uRkVxm9l6DluWa__YLi7tG0uxzpmIj4AdxPwc4g/edit', '_blank').focus();">
-            
-            <img src="handbookIcon.png" class="menuPic">Handbook
+          <div class="sidebarItem home">
+            <img src="handbookIconFill.png" class="menuPic">Handbook
           </div>
-          <div class="sidebarItem" onclick="window.open('https://ameshighathletics.org/activities/?per_page=12&page=1', '_blank').focus();">
-            
-            <img src="clubsIcon.png" class="menuPic">Clubs & Activities
+          <div class="sidebarItem home" onclick="window.open('https://ameshighathletics.org/activities/?per_page=12&page=1', '_blank').focus();">
+            <img src="clubIconFill.png" class="menuPic">Clubs & Activities
           </div>
-          
-          <div class="sidebarItem">
-            
-            <img src="academicPlanIcon.png" class="menuPic">Academic Plan
-          </div>
-          
-          <div class="sidebarItem">
-            <img src="codeIcon.png" class="menuPic" onclick="window.open('https://github.com/Anirudh4Neutrino/RateMyClass', '_blank').focus();">Code
-          </div>
+        
+        
+           <!-- <img src="codeIcon.png" class="codePic"  onclick="window.open('https://github.com/Anirudh4Neutrino/RateMyClass', '_blank').focus();">-->
           
           
         </div>
 
         <!-- Main Content -->
-        <div class="main-content"><div class="header">
+        <div class="main-content"><div class="header" style="background-color: var(--light-mode-bg)" id="header">
           
                 <div class="title"> 
                   <strong>Course<i>rr</i></strong>
@@ -254,11 +171,57 @@ function fav(element) {
 }
 function modeChange(thing) {
   if(thing.innerText == "light_mode") {
-    thing.innerText = "dark_mode";
+    thing.removeAttribute("onclick");
+    thing.style.transition = "transform 1.5s ease, opacity 0.75s ease";
+    thing.style.background = "none";
+    thing.style.transform = "rotate(360deg)";
+    thing.style.opacity = "0";
+    document.getElementsByTagName('style')[0].innerHTML="md-filter-chip { background-color: #9c9c9c; --md-sys-color-outline:lightgrey;} .header {color: white;} .sidebar{color: white} .menuPic {filter: invert(100%)}";
+      document.getElementById('body').style.backgroundColor = "var(--dark-bg)";
+      document.getElementById('sidebar').style.backgroundColor = "var(--dark-mode-bg)";
+      document.getElementById('header').style.backgroundColor = "var(--dark-mode-bg)";
+    setTimeout (() => {
+      
+      thing.innerText = "dark_mode";
+      thing.style.opacity = "1";
+    }, 750);
+    setTimeout(() => {
+      
+      thing.style.removeProperty("background");
+      thing.style.removeProperty("opacity");
+      thing.style.removeProperty("transform");
+      thing.style.removeProperty("transition");
+      thing.setAttribute("onclick", "modeChange(this)");
+    }, 1500);
+    //thing.innerText = "dark_mode";
+    
     return;
   }
   if(thing.innerText == "dark_mode") {
-    thing.innerText = "light_mode";
+    thing.removeAttribute("onclick");
+    thing.style.transition = "transform 1.5s ease, opacity 0.75s ease";
+    thing.style.background = "none";
+    thing.style.transform = "rotate(360deg)";
+    thing.style.opacity = "0";
+    document.getElementsByTagName('style')[0].innerHTML="md-filter-chip { background-color: white; }";
+      document.getElementById('body').style.backgroundColor = "var(--light-bg)";
+      document.getElementById('sidebar').style.backgroundColor = "var(--light-mode-bg)";
+      document.getElementById('header').style.backgroundColor = "var(--light-mode-bg)";
+    setTimeout (() => {
+      
+      thing.innerText = "light_mode";
+      thing.style.opacity = "1";
+    }, 750);
+    setTimeout(() => {
+      
+      thing.style.removeProperty("background");
+      thing.style.removeProperty("opacity");
+      thing.style.removeProperty("transform");
+      thing.style.removeProperty("transition");
+      thing.setAttribute("onclick", "modeChange(this)");
+    }, 1500);
+    
+    //thing.innerText = "light_mode";
   }  
   
 }

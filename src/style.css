@@ -1,4 +1,7 @@
 /* General Styles */
+
+
+
 * {
     margin: 0;
     padding: 0;
@@ -6,17 +9,21 @@
     font-family: "Roboto", sans-serif;
 }
 :root {
-    height: 100%
+    height: 100%;
+    --light-mode-bg: rgba(204, 204, 204, 0.75);
+    --dark-mode-bg: rgba(75, 75, 75, 0.75);
+    --dark-bg: rgb(20, 20, 20);
+    --light-bg: white;
 }
 
 
 body {
-    background-color: white;
     overflow: hidden;
     height: 100vh;
     width: 100vw;
     margin: 0;
     padding: 0;
+    transition: background-color 1.5s ease;
 }
 
 .container {
@@ -29,13 +36,13 @@ body {
     z-index: 900;
     width: 5vw;
     /* background-color: #134B57;*/
-    background-color: rgba(202, 228, 235, 0.75);
     color: white;
     display: flex;
     flex-direction: column;
     align-items: start;
     height: 100vh;
-    transition: 0.2s width ease-out, 0.3s background ease-out, box-shadow 0.3s ease-out;
+    color: black;
+    transition: 0.2s width ease-out, 1.5s background-color ease, box-shadow 0.3s ease-out, color 1.5s ease;
     backdrop-filter: blur(50px);
     position: fixed;
     
@@ -55,16 +62,16 @@ body {
   overflow: clip;
   /*border: 2px solid white;*/
   font-size: 2vw;
-  color: black;
+  
   font-weight: bold;
-  transition: font-size 0.15s ease;
+  transition: font-size 0.15s ease, background-color 0.15s ease;
   cursor: pointer;
 }
 .sidebarItem:hover {
  /* background: #185c6b;*/
   background-color: rgba(0, 0, 0, 0.1);
   font-size: 2.1vw;
-}
+}*/
 .sidebarItem:hover > .menuPic {
   height: 4.1vw;
   width: 4.1vw;
@@ -74,11 +81,11 @@ body {
   position: absolute;
   float: right;
   margin-left: 30vw;
-  margin-top: 2.5vh;
+  margin-top: 1.5vh;
   padding: 0.5%;
   border-radius: 25%;
   font-size: 5vh;
-  transition: background-color 0.1s ease, transform 0.1s ease;
+  transition: background-color 0.1s ease, transform 1s ease;
 }
 .mobileClose {
   display: none;
@@ -87,13 +94,13 @@ body {
 }
 .mode:hover {
   background-color: rgba(0, 0, 0, 0.1);
-  transform: scale(1.15,1.15);
+  /*transform: scale(1.15,1.15);*/
 }
 .menuPic {
   height: 4vw;
   width: 4vw;
   margin-right: 1vw;
-  transition: all 0.15s ease;
+  transition: all 0.15s ease, filter 1.5s ease;
 }
 /* Main Content Styles */
 .main-content {
@@ -104,16 +111,17 @@ body {
 
 .header {
     z-index: 50;
-    background-color: rgba(202, 228, 235, 0.75);
+    
     backdrop-filter: blur(10vh);
     will-change: backdrop-filter;
     transform: translateZ(0);
     position: relative;
     display: flex;
     flex-direction: column;
-    height: 15.5vh;
-    font-size: 9vh;
+    height: 14.5vh;
+    font-size: 8vh;
     width: 95vw;
+    transition: background-color 1.5s ease, color 1.5s ease;
 }
 .header > div {
   background-color: none;
@@ -289,46 +297,67 @@ body {
   
 }
 .classCard {
-  border: 3px solid black;
+  border: 3px solid currentColor;
   height: min-content;
   width: fit-content;
   padding: 1vh 1vw 1vh 1vw;
   cursor: default;
   border-radius: 2vh;
-  transition: box-shadow 0.2s ease, transform 0.1s ease;
+  transition: box-shadow 0.2s ease, transform 0.1s ease, background-color 1.5s ease;
   
 }
 .classCard:hover {
-  box-shadow: 0 0 2vh currentColor;
-  transform: rotate(0.2deg) scale(1.05);
+  box-shadow: 0 0 1vh currentColor;
+  transform: scale(1.005);
 }
 span {
   user-select: none;
 }
 .history {
-  background: #81A489;
-  color: #81A489;
+  /*background: #81A489;*/
+  background: #5b135a;
+  /*background-color: rgba(129, 164, 137, 0.75);*/
+  color: #290928;
 }
 .english {
-  background: #F2A054;
-  color: #F2A054;
+  /*background: #F2A054;*/
+  /*background-color: rgba(208, 101, 235, 0.75);*/
+  background: #7a98de;
+  color: #5e75ab;
 }
 .math {
-  background: #F1D8B5;
-  color: #F1D8B5;
+  /*background: #F1D8B5;*/
+  background: #335a8a;
+  /*background-color: rgba(101, 235, 105, 0.75);*/
+  color: #203957;
 }
 .arts {
-  background: #C04D31;
-  color: #C04D31;
+  /*background: #C04D31;*/
+  background: #2bcbc9;
+  /*background-color: rgba(235, 101, 101, 0.75);*/
+  color: #209997;
 }
 .science {
-  background: #8043AD;
-  color: #8043AD;
+  /*background: #8043AD;*/
+  background: #7f995a;
+  /*background-color: rgba(235, 202, 101, 0.75);*/
+  color: #55663c;
 }
 .music {
-  background: #42A6A9;
-  color:#42A6A9;
+  /*background: #42A6A9;*/
+  background: #ddc260;
+  /*background-color: rgba(101, 235, 231, 0.75);*/
+  color: #ab9649;
 }
+.foreignLanguage {
+  background: #e99ca5;
+  color: #b57980;
+}
+.misc {
+  background: #c3044c;
+  color: #8f0339;
+}
+
 .closeMenu {
   z-index: 901;
   opacity: 0;
@@ -339,6 +368,9 @@ span {
   z-index: 902;
   transition: opacity 0.25s ease, transform 0.5s ease;
 }
+
+
+
 
 @media (hover: none) {
   .sidebarItem:hover {
@@ -362,7 +394,10 @@ span {
 }
 
 }
-
+.code:hover {
+  background-color: none;
+  font-size: inherit;
+}
 @media (max-width:768px) {
   .header {
     width: 100vw;
@@ -392,7 +427,7 @@ span {
     width: 38vw;
   }
   .mode {
-    display: none;
+    margin-left:  85vw;
   }
   .sidebar {
     width: 40vw;
@@ -432,10 +467,21 @@ span {
     margin-left: 0.5vw;
     margin-right: 1vw;
   }
-  .home {
-    display: none;
-  }
   .mobileClose {
     display: flex;
   }
+
+}
+
+:root {
+  --md-assist-chip-container-shape: 0px;
+  --md-assist-chip-label-text-font: system-ui;
+  --md-sys-color-outline: #6F7979;
+  --md-sys-color-on-surface: black;
+  --md-filter-chip-selected-container-color: rgba(28, 109, 128, 0.5);
+  --md-filter-chip-selected-pressed-label-text-color: black;
+  --md-filter-chip-disabled-label-text-color: black;
+  --md-filter-chip-hover-label-text-color: black;
+  --md-filter-chip-label-text-color: black;
+  --md-filter-chip-focus-label-text-color: black;
 }
