@@ -67,14 +67,16 @@ body {
   transition: font-size 0.15s ease, background-color 0.15s ease;
   cursor: pointer;
 }
+@media (max-width:769) {
 .sidebarItem:hover {
  /* background: #185c6b;*/
   background-color: rgba(0, 0, 0, 0.1);
   font-size: 2.1vw;
-}*/
+}
 .sidebarItem:hover > .menuPic {
   height: 4.1vw;
   width: 4.1vw;
+}
 }
 
 .mode {
@@ -92,9 +94,11 @@ body {
   transition: opacity 0.75s ease;
   opacity: 0;
 }
+@media (max-width:769) {
 .mode:hover {
   background-color: rgba(0, 0, 0, 0.1);
   /*transform: scale(1.15,1.15);*/
+}
 }
 .menuPic {
   height: 4vw;
@@ -236,11 +240,12 @@ body {
     background: transparent;
 }
 
-
+@media (max-width:769) {
 .sidebar:hover {
   /*background-color: #165766;*/
   width: 17.5vw;
   box-shadow: 0 0 5vh rgba(0, 0, 0, 0.2);
+}
 }
 .classHeader {
   width: 18vw;
@@ -389,9 +394,6 @@ span {
   width: 5vw;
   box-shadow: initial;
 }
-.mode {
-  display: none;
-}
 
 }
 .code:hover {
@@ -427,7 +429,7 @@ span {
     width: 38vw;
   }
   .mode {
-    margin-left:  85vw;
+    margin-left:85vw;
   }
   .sidebar {
     width: 40vw;
