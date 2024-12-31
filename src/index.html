@@ -77,6 +77,43 @@ md-filter-chip {
 md-sys-color {
   transition: outline-color 1.5s ease;
 }
+
+.user-button {
+    position: relative;
+    display: inline-block;
+    margin-right: 1vw;
+    cursor: pointer;
+}
+
+.user-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--light-mode-bg);
+}
+
+.user-info-popup {
+    position: absolute;
+    top: 50px;
+    left: -10px;
+    background-color: var(--light-mode-bg);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    white-space: nowrap;
+    z-index: 1000;
+}
+
+.user-info-popup.hidden {
+    display: none;
+}
+
+.user-info-popup p {
+    margin: 0;
+    padding: 0;
+}
+
 </style>
 
 </head>
@@ -93,7 +130,8 @@ md-sys-color {
             <img src="homeIconFill.png" class="menuPic">Home
           </div>
           <div class="sidebarItem home">
-            <img src="accountIconFill.png" class="menuPic">Account
+            <img src="accountIconFill.png" class="menuPic" onclick="window.location.href='login.html';">Account
+
           </div>
           <div class="sidebarItem home">
             <img src="handbookIconFill.png" class="menuPic">Handbook
@@ -145,7 +183,19 @@ md-sys-color {
             <!-- Classes Grid -->
             <div class="class-grid" id='classGrid'>
 
-
+              <div class="header" style="background-color: var(--light-mode-bg)" id="header">
+                <div class="title"> 
+                    <strong>Course<i>rr</i></strong>
+                    <span class="user-button" id="userButton" onmouseover="showUserInfo()">
+                        <img src="defaultProfile.png" id="userIcon" class="user-icon" alt="Profile">
+                    </span>
+                    <div id="userInfoPopup" class="user-info-popup hidden">
+                        <p id="userName">Not signed in</p>
+                    </div>
+                    <span class="material-symbols-rounded mode" style="font-size:5vh" onclick="modeChange(this)">light_mode</span>
+                </div>
+            </div>
+            
 
             </div>
             </div>
@@ -153,105 +203,123 @@ md-sys-color {
 
 
 
-<script>
-function fav(element) {
-   let fillValue;
-   //alert(element.id);
-    if (element.style.cssText.includes("1")) {
-        fillValue = "'FILL' 0";  // If it's filled, switch to unfilled.
-        bookmarks[bookmarks.indexOf(element.id)] = "";
-    } else {
-        fillValue = "'FILL' 1";  // If it's unfilled, switch to filled.
-        bookmarks.push(element.id);
-    }
-    element.style.fontVariationSettings = fillValue;
-    bookmarks = bookmarks.filter(item => item !== "");
-    sessionStorage.setItem("bookmarks", bookmarks);
-    //alert(sessionStorage.getItem("bookmarks"));
-}
-function modeChange(thing) {
-  if(thing.innerText == "light_mode") {
-    thing.removeAttribute("onclick");
-    thing.style.transition = "transform 1.5s ease, opacity 0.75s ease";
-    thing.style.background = "none";
-    thing.style.transform = "rotate(360deg)";
-    thing.style.opacity = "0";
-    document.getElementsByTagName('style')[0].innerHTML="md-filter-chip { background-color: #9c9c9c; --md-sys-color-outline:lightgrey;} .header {color: white;} .sidebar{color: white} .menuPic {filter: invert(100%)}";
-      document.getElementById('body').style.backgroundColor = "var(--dark-bg)";
-      document.getElementById('sidebar').style.backgroundColor = "var(--dark-mode-bg)";
-      document.getElementById('header').style.backgroundColor = "var(--dark-mode-bg)";
-    setTimeout (() => {
-      
-      thing.innerText = "dark_mode";
-      thing.style.opacity = "1";
-    }, 750);
-    setTimeout(() => {
-      
-      thing.style.removeProperty("background");
-      thing.style.removeProperty("opacity");
-      thing.style.removeProperty("transform");
-      thing.style.removeProperty("transition");
-      thing.setAttribute("onclick", "modeChange(this)");
-    }, 1500);
-    //thing.innerText = "dark_mode";
-    
-    return;
-  }
-  if(thing.innerText == "dark_mode") {
-    thing.removeAttribute("onclick");
-    thing.style.transition = "transform 1.5s ease, opacity 0.75s ease";
-    thing.style.background = "none";
-    thing.style.transform = "rotate(360deg)";
-    thing.style.opacity = "0";
-    document.getElementsByTagName('style')[0].innerHTML="md-filter-chip { background-color: white; }";
-      document.getElementById('body').style.backgroundColor = "var(--light-bg)";
-      document.getElementById('sidebar').style.backgroundColor = "var(--light-mode-bg)";
-      document.getElementById('header').style.backgroundColor = "var(--light-mode-bg)";
-    setTimeout (() => {
-      
-      thing.innerText = "light_mode";
-      thing.style.opacity = "1";
-    }, 750);
-    setTimeout(() => {
-      
-      thing.style.removeProperty("background");
-      thing.style.removeProperty("opacity");
-      thing.style.removeProperty("transform");
-      thing.style.removeProperty("transition");
-      thing.setAttribute("onclick", "modeChange(this)");
-    }, 1500);
-    
-    //thing.innerText = "light_mode";
-  }  
-  
-}
-function openClose(closed) {
-  let lines = document.getElementById('lines');
-  let exes = document.getElementById('exes');
-  let text = document.getElementById('mobileClose');
-  let sidebar = document.getElementById('sidebar');
-  if(closed) {
-    exes.style.opacity = "1";
-    exes.style.transform = "rotate(-90deg)"
-    exes.style.zIndex = "1002";
-    lines.style.opacity = "0";
-    lines.style.transform = "rotate(90deg)";
-    lines.style.zIndex = "1001";
-    sidebar.style.transform = "translateX(0vw)"
-    text.style.opacity = "1";
-    
-  } else {
-    exes.style.opacity = "0";
-    exes.style.transform = "rotate(0deg)"
-    exes.style.zIndex = "1001";
-    lines.style.opacity = "1";
-    lines.style.transform = "rotate(0deg)";
-    lines.style.zIndex = "1002";
-    sidebar.style.transform = "translateX(-40vw)"
-    text.style.opacity = "0";
-  }
-
-}
-</script>
+        <script>
+          function fav(element) {
+             let fillValue;
+             if (element.style.cssText.includes("1")) {
+                  fillValue = "'FILL' 0"; // If it's filled, switch to unfilled.
+                  bookmarks[bookmarks.indexOf(element.id)] = "";
+              } else {
+                  fillValue = "'FILL' 1"; // If it's unfilled, switch to filled.
+                  bookmarks.push(element.id);
+              }
+              element.style.fontVariationSettings = fillValue;
+              bookmarks = bookmarks.filter(item => item !== "");
+              sessionStorage.setItem("bookmarks", bookmarks);
+          }
+          
+          function modeChange(thing) {
+            if (thing.innerText === "light_mode") {
+              // Switch to dark mode
+              toggleMode(thing, "dark_mode", "light");
+            } else if (thing.innerText === "dark_mode") {
+              // Switch to light mode
+              toggleMode(thing, "light_mode", "dark");
+            }
+          }
+          
+          function toggleMode(thing, mode, colorScheme) {
+            thing.removeAttribute("onclick");
+            thing.style.transition = "transform 1.5s ease, opacity 0.75s ease";
+            thing.style.transform = "rotate(360deg)";
+            thing.style.opacity = "0";
+            document.getElementsByTagName("style")[0].innerHTML =
+              colorScheme === "dark"
+                ? "md-filter-chip { background-color: white; }"
+                : "md-filter-chip { background-color: #9c9c9c; --md-sys-color-outline:lightgrey;} .header {color: white;} .sidebar{color: white} .menuPic {filter: invert(100%)}";
+            document.getElementById("body").style.backgroundColor = `var(--${colorScheme}-bg)`;
+            document.getElementById("sidebar").style.backgroundColor = `var(--${colorScheme}-mode-bg)`;
+            document.getElementById("header").style.backgroundColor = `var(--${colorScheme}-mode-bg)`;
+          
+            setTimeout(() => {
+              thing.innerText = mode;
+              thing.style.opacity = "1";
+            }, 750);
+          
+            setTimeout(() => {
+              thing.removeAttribute("style");
+              thing.setAttribute("onclick", "modeChange(this)");
+            }, 1500);
+          }
+          
+          function openClose(closed) {
+            const lines = document.getElementById("lines");
+            const exes = document.getElementById("exes");
+            const text = document.getElementById("mobileClose");
+            const sidebar = document.getElementById("sidebar");
+          
+            if (closed) {
+              exes.style.opacity = "1";
+              exes.style.zIndex = "1002";
+              lines.style.opacity = "0";
+              lines.style.zIndex = "1001";
+              sidebar.style.transform = "translateX(0vw)";
+              text.style.opacity = "1";
+            } else {
+              exes.style.opacity = "0";
+              exes.style.zIndex = "1001";
+              lines.style.opacity = "1";
+              lines.style.zIndex = "1002";
+              sidebar.style.transform = "translateX(-40vw)";
+              text.style.opacity = "0";
+            }
+          }
+          
+          function showUserInfo() {
+            const userInfoPopup = document.getElementById("userInfoPopup");
+            const userName = document.getElementById("userName");
+            const userIcon = document.getElementById("userIcon");
+          
+            // Check if the user is signed in
+            const isSignedIn = localStorage.getItem("userSignedIn") === "true";
+          
+            if (isSignedIn) {
+              const userNameData = localStorage.getItem("userName") || "Unknown User";
+              const userPictureData = localStorage.getItem("userPicture") || "defaultProfile.png";
+          
+              userName.textContent = userNameData;
+              userIcon.src = userPictureData;
+            } else {
+              userName.textContent = "Not signed in";
+              userIcon.src = "defaultProfile.png";
+            }
+          
+            userInfoPopup.classList.remove("hidden");
+          }
+          
+          // Hide the popup on mouse leave
+          function hideUserInfo() {
+            document.getElementById("userInfoPopup").classList.add("hidden");
+          }
+          
+          // Sign-in logic
+          function handleSignIn(user) {
+            localStorage.setItem("userSignedIn", "true");
+            localStorage.setItem("userName", user.name);
+            localStorage.setItem("userPicture", user.picture);
+          }
+          
+          // Sign-out logic
+          function handleSignOut() {
+            localStorage.setItem("userSignedIn", "false");
+            localStorage.removeItem("userName");
+            localStorage.removeItem("userPicture");
+          }
+          
+          // Attach event listeners
+          document.getElementById("userButton").addEventListener("mouseover", showUserInfo);
+          document.getElementById("userButton").addEventListener("mouseleave", hideUserInfo);
+          </script>
+        
 </body >
 </html>
