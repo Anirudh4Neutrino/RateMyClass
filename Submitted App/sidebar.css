@@ -1,0 +1,111 @@
+/* Sidebar Styles */
+.sidebar {
+    z-index: 900;
+    width: 5vw;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    height: 100vh;
+    color: black;
+    transition: 0.2s width ease-out, 1.5s background-color ease, box-shadow 0.3s ease-out, color 1.5s ease;
+    backdrop-filter: blur(50px);
+    position: fixed;
+    overflow: hidden;
+}
+
+.menuMobile {
+  display: none;
+}
+.sidebarItem {
+  padding-left: 0.5vw;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 100%;
+  height: 10vh;
+  font-size: 2vw;
+  font-weight: bold;
+  cursor: pointer;
+}
+.sidebarItem:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  font-size: 2.1vw;
+}
+.mode {
+  position: absolute;
+  z-index: 999;
+  left: 90vw;
+  padding: 0.5%;
+  font-size: 5vh;
+}
+.sidebar:hover {
+  width: 17.5vw;
+  box-shadow: 0 0 5vh rgba(0, 0, 0, 0.2);
+}
+
+/* Sidebar Images */
+.menuPic {
+    height: 4vw;
+    width: 4vw;
+    margin-right: 1vw;
+    transition: all 0.15s ease, filter 1.5s ease;
+}
+.sidebarItem:hover > .menuPic {
+    height: 4.1vw;
+    width: 4.1vw;
+}
+
+/* Header Styles */
+.header {
+    z-index: 50;
+    backdrop-filter: blur(10vh);
+    will-change: backdrop-filter;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 14.5vh;
+    font-size: 8vh;
+    width: 95vw;
+    transition: background-color 1.5s ease, color 1.5s ease;
+}
+.title {
+    margin: 0 auto;
+    text-align: center;
+    height: inherit;
+    z-index: 500;
+}
+.filterArea {
+    height: 5vh;
+    width: 95vw;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-end;
+    overflow-x: auto;
+}
+.filterChip {
+    display: inline-block;
+}
+.mobileClose {
+  display: hidden;
+}
+@media (max-width: 768px) {
+    /* Sidebar hover styles for mobile */
+    .sidebar:hover {
+        width: 40vw; /* Keep sidebar width manageable */
+        box-shadow: 0 0 5vh rgba(0, 0, 0, 0.2); /* Maintain shadow */
+    }
+
+    /* Hide sidebar items initially */
+    .mobileClose {
+        display: flex; /* Show close button on mobile */
+    }
+
+    /* Sidebar items should be easier to click on smaller devices */
+    .sidebarItem {
+        height: 12vh; /* Increase height for easier tapping */
+        font-size: 4vh; /* Increase font size for readability */
+    }
+}
+

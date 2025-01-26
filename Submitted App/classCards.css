@@ -1,0 +1,131 @@
+/* Class Grid Styles */
+.class-grid {
+    position: absolute;
+    top: 0vh;
+    padding: 2.5vw;
+    padding-top: 18.5vh;
+    display: grid;
+    grid-template-columns: 20vw 20vw 20vw 20vw;
+    column-gap: 3.3vw;
+    row-gap: 2vh;
+    height: 100vh;
+    width: 95vw;
+    overflow-y: scroll;
+}
+.class-grid::-webkit-scrollbar {
+    width: 0.5vw;
+}
+.class-grid::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+/* Class Card Styles */
+.classCard {
+    border: 3px solid currentColor;
+    height: min-content;
+    width: fit-content;
+    padding: 1vh 1vw;
+    border-radius: 2vh;
+    transition: box-shadow 0.2s ease, transform 0.1s ease;
+}
+.classCard:hover {
+    box-shadow: 0 0 1vh currentColor;
+    transform: scale(1.005);
+}
+.classHeader {
+    width: 18vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.className {
+    width: 100%;
+    font-size: 1.5vw;
+    font-weight: bold;
+}
+/* Class Card Color Styles */
+.history {
+    background: #5b135a;
+    color: #290928;
+}
+.english {
+    background: #7a98de;
+    color: #5e75ab;
+}
+.math {
+    background: #335a8a;
+    color: #203957;
+}
+.arts {
+    background: #2bcbc9;
+    color: #209997;
+}
+.science {
+    background: #7f995a;
+    color: #55663c;
+}
+.music {
+    background: #ddc260;
+    color: #ab9649;
+}
+.foreignLanguage {
+    background: #e99ca5;
+    color: #b57980;
+}
+.misc {
+    background: #c3044c;
+    color: #8f0339;
+}
+
+/* Class Card Layout */
+.classHeader {
+    width: 18vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: black;
+}
+.className {
+    font-size: 1.5vw;
+    font-weight: bold;
+    text-align: center;
+    transition: transform 0.25s ease;
+}
+.classRate {
+    margin-top: 1vh;
+    padding: 0 1vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 6vh;
+    width: 18vw;
+    border: 1px solid black;
+    border-radius: 2vh;
+    backdrop-filter: saturate(80%);
+    color: black;
+}
+.classDes {
+    padding: 1%;
+    margin-top: 1vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: black;
+}
+
+@media (max-width: 768px) {
+    /* Adjust class grid layout for mobile */
+    .class-grid {
+        grid-template-columns: repeat(2, 40vw); /* Two columns on mobile */
+        padding: 2.5vw; /* Adjust padding for mobile */
+    }
+
+    /* Class card styles */
+    .classCard {
+        width: 90%; /* Make cards take more width on mobile */
+        margin: 1vh auto; /* Center cards */
+    }
+}
+

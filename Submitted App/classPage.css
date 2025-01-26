@@ -1,0 +1,241 @@
+:root {
+  --borderRad: 1vw;
+}
+
+
+.classPageInfoContainer {
+  position: absolute;
+  overflow-y: scroll;
+  width: 95vw;
+  height: 100vh;
+  left: 5vw;
+  /* top | right | bottom | left */
+  padding: 13vh 2.5vw 3vh 2.5vw;
+  border-radius: var(--borderRad);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.classPageFullSpread {
+  width: 90vw;
+  height: 40vh;
+  border-radius: var(--borderRad);
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 3vh;
+  background-color: #13678A;
+}
+
+.classPageHalfSpread {
+  /*border: 4px solid black;*/
+  width: 44vw;
+  height: 40vh;
+  border-radius: var(--borderRad);
+  margin-bottom: 3vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #45C4B0;
+}
+
+.classPageHeaderRight {
+  height: 40vh;
+  width: 40vw;
+}
+.classPageHeaderLeft {
+  height: 40vh;
+  width: 50vw;
+  display: flex;
+  flex-direction: row;
+}
+.classPageClassName {
+  height: 30vh;
+  width: 40vw;
+  padding: 1vw;
+  /* top | right | bottom | left */
+  /*border-width: 4px 2px 0 4px;
+  border-color: black;
+  border-style: solid;*/
+  border-top-left-radius: var(--borderRad) var(--borderRad);;
+}
+.classPageClassRateing {
+  height: 10vh;
+  width: 40vw;
+  font-size: 5vh;
+  padding: 1vw;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  /* top | right | bottom | left */
+  /*border-width: 0 2px 4px 4px;
+  border-color: black;
+  border-style: solid;*/
+  border-bottom-left-radius: var(--borderRad) var(--borderRad);; 
+  
+}
+.classPageClassRateing > span {
+  margin-right: 2.5vw;
+}
+.classPageName {
+  font-size: 10vh;
+  word-spacing: 9999999px;
+}
+.classPageTeacher {
+  font-size: 2.5vh;
+  margin-top: 1vh;
+}
+.classPageClassInfo {
+  height: 40vh;
+  width: 25vw;
+}
+.classPageBORDERS {
+  /* top | right | bottom | left */
+  /*border-width: 4px 4px 4px 2px;
+  border-color: black;
+  border-style: solid;*/
+  border-top-right-radius: var(--borderRad) var(--borderRad);
+  border-bottom-right-radius: var(--borderRad) var(--borderRad);
+}
+.classPageClassPrereq {
+  height: 20vh;
+  overflow-y: scroll;
+  /* top | right | bottom | left */
+  /*border-width: 4px 2px 2px 2px;
+  border-color: black;
+  border-style: solid;*/
+}
+.classPageClassTags {
+  height: 20vh;
+  overflow-y: scroll;
+  /* top | right | bottom | left */
+  /*border-width: 2px 2px 4px 2px;
+  border-color: black;
+  border-style: solid;*/
+} 
+.tagsTitle {
+  height: 4vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5vh;
+  font-weight: bold;
+}
+.classPageClassTagsArea {
+  padding: 1vw;
+  height: 16vh;
+  
+}
+.classPageClassDecription {
+  font-size: larger;
+  text-align: center;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+.classPageClassDecription > p {
+  padding: 0 2.5vw 0 2.5vw;
+  
+}
+.classPageGraphHalf {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.commentBox {
+  margin-bottom: 3vh;
+  width: 90vw;
+  height: 18vh;
+  background-color: lightpink;
+  border-radius: var(--borderRad);
+  display: grid;
+  grid-template: 
+                      "ratee textt textt" 4vh
+                      "ratee textt textt" 8vh
+                      "ratee tagss symbols" 6vh / 15vw 60vw 15vw;
+}
+.overall {
+  grid-area: overall;
+  /*background-color: red;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5vh;
+  padding-top: 4vh;
+}
+.textt {
+  grid-area: textt;
+  /*background-color: yellow;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.3vh;
+  padding: 1%;
+  
+}
+.ratee {
+  grid-area: ratee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*background-color: orange;*/
+  font-size: 8vh;
+}
+.tagss {
+  grid-area: tagss;
+  /*background-color: green;*/
+  display: flex;
+  flex-wrap: nowrap; 
+  justify-content: center; 
+  align-items: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  padding-left: 1vw;
+}
+.symbols {
+  padding: 5%;
+  grid-area: symbols;
+  /*background-color: blue;*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+h1 {
+  height: 4vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5vh;
+  font-weight: bold;
+}
+ul {
+    list-style-type: disc;
+    margin: 20px 0;
+    padding-left: 40px;
+}
+li {
+    margin-bottom: 10px;
+    color: black;
+}
+
+.classPageClassInfo > div::-webkit-scrollbar {
+    height: 0.5vh;
+    width: 0.5vw;
+}
+
+.classPageClassInfo > div::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 2vh;
+}
+
+.classPageClassInfo > div::-webkit-scrollbar-track {
+    background: transparent;
+}
+md-chip-set::-webkit-scrollbar {
+  display: none;
+}
